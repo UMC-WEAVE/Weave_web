@@ -1,0 +1,51 @@
+.logo {
+    /* font-size:64px;
+    background-color: aliceblue; */
+    width:350px;
+    height:100px;
+    margin:30px;
+}
+
+.main {
+    display:flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-around;
+}
+
+.imageContainer {
+    width:50%
+}
+
+.mainImageDiv1 {
+    position:relative;
+    left:0px;
+    top:50px;
+}
+
+.mainImageDiv2 {
+    position:relative;
+    left:200px;
+    bottom:200px;
+}
+
+.mainImage1, .mainImage2 {
+    width:400px;
+    height:300px;
+}
+
+.loginDiv {
+    position:relative;
+    display:flex;
+    flex-direction: column;
+}
+
+.mainText {
+    font-size:50px;
+    padding:100px;
+}
+
+.loginBtn {
+
+    float:right;
+}
