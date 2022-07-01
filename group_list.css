@@ -1,0 +1,113 @@
+.topDiv {
+    display:flex;
+    flex-direction: column;
+    padding: 30px 10px 10px 50px;
+    /* align-content: center; */
+    /* justify-content: space-around; */
+}
+
+.logo {
+    width:350px;
+    height:100px;
+}
+
+.title {
+    font-size:50px;
+}
+
+.gruopContainer {
+    display: block;
+    margin: 4px;
+    padding: 4px;
+    scroll-behavior: smooth;
+}
+
+.groupListContainer {
+    display:flex;
+    list-style:none;
+    justify-content: flex-start;
+    /* justify-content: space-around; */
+}
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.groupList {
+    /* min-width: 0;
+    scroll-margin-left: calc(var(--_QXfyzegW) + var(--_QKmj4HUQ));
+    scroll-margin-right: calc(var(--_QXfyzegW) + var(--_QKmj4HUQ));
+    scroll-snap-align: start; */
+    margin:20px;
+    width:260px;
+    /*밑에꺼 뭔지 모르겠다*/
+    /* width: calc((100% + var(--_j9kUiVvH) - var(--_QXfyzegW)*2)*var(--_ZhsJfzXT) - var(--_j9kUiVvH)); */
+}
+
+.itemContainer {
+    position:relative;
+    border: 0px;
+    border-radius: 20px;
+    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+}
+
+.imageContainer {
+    padding-bottom: 8px;
+}
+
+.thumbnail {
+    display:block;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* border-bottom-left-radius: ;
+    border-bottom-left-radius: 'value'; */
+}
+
+.infoContainer {
+    display: grid;
+    gap: 8px;
+    padding:4px;
+}
+
+.tripTitle, .tripPeriod, .tripMember {
+    display:flex;
+    flex-direction: row;
+}
+
+.tripMember {
+    justify-content: flex-end;
+}
+
+hr {
+    margin-top: 50px;
+    width:90%;
+}
+
+
+
+.buttonContainer {
+    display: grid;
+    gap: 8px;
+    margin:30px;
+}
+
+.makeGroupBtn {
+    margin:20px;
+    padding:5px;
+    width:260px;
+    height:290px;
+    border:0px;
+    border-radius: 20px;
+    font-size:30px;
+    font-weight:lighter;
+    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+}
+
+.joinBtnDiv {
+    margin: auto;
+    padding: 0 20px;
+}
