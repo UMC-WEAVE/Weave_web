@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="archive.css">
+</head>
+<body>
+  <div data-include-path="page_layout.html">
+  </div>
+    <script>
+      window.addEventListener('load', function() {
+            var allElements = document.getElementsByTagName('*');
+            Array.prototype.forEach.call(allElements, function(el) {
+                var includePath = el.dataset.includePath;
+                if (includePath) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            el.outerHTML = this.responseText;
+                        }
+                    };
+                    xhttp.open('GET', includePath, true);
+                    xhttp.send();
+                }
+            });
+        });
+    </script>
+    </div>
+    <!--본문-->
+    <div class="content">
+      <!--gal-->
+      <div class="gal">
+        <!--galTop-->
+        <div class="galTop">
+          음식
+        </div>
+        <!--galBox-->
+        <div class="galBox">
+          <div class="galBoxcontent">
+            <div class="galBoxContentInner">
+                <h3>
+                    모해 통갈치 화덕구이
+                </h3>
+                <p>
+                    링크
+                </p>
+            </div>
+          </div>
+          <div class="galBoxcontent">
+            <div class="galBoxContentInner">
+              <h3>
+                흑돈가 제주 본점
+              </h3>
+              <p>
+                링크
+              </p>
+            </div>
+          </div>
+          <div class="galBoxcontent">
+            <div class="galBoxContentInner">
+              <h3>
+                성산 흑돼지 두루치기
+              </h3>
+              <p>
+                링크
+              </p>
+            </div>
+          </div>
+          <div class="galBoxcontent">
+            <div class="galBoxContentInner">
+              <h3>
+                  제주 돈어길
+              </h3>
+              <p>
+                  링크
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--cafe-->
+      <div class="cafe">
+        <div class="cafeTop">
+        카페
+        </div>
+        <div class="cafeBox">
+          <div class="cafeBoxcontent">
+            <div class="cafeBoxContentInner">
+                <h3>
+                    제주 하엘
+                </h3>
+                <p>
+                    링크
+                </p>
+            </div>
+          </div>
+          <div class="cafeBoxcontent">
+            <div class="cafeBoxContentInner">
+              <h3>
+                하이엔드 제주
+              </h3>
+              <p>
+                링크
+              </p>
+            </div>
+          </div>
+          <div class="cafeBoxcontent">
+            <div class="cafeBoxContentInner">
+              <h3>
+                카페 인 제주
+              </h3>
+              <p>
+                링크
+              </p>
+            </div>
+          </div>
+          <div class="cafeBoxcontent">
+            <div class="cafeBoxContentInner">
+              <h3>
+                추가 +
+              </h3>
+              <p>
+                plus
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
