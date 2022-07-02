@@ -8,6 +8,46 @@
     <link rel="stylesheet" href="group_list.css" />
 </head>
 <body>
+    <!-- modal -->
+    <div class="overlay"></div>
+    <div class="modalDiv">
+        <div class="modal">
+            <div class="modal_body">
+                <div class="modalTitle">
+                    그룹 생성하기
+                </div>
+                <div class="infoContainer">
+                    <form action="" method="get" class="groupForm">
+                        <div class="groupName">
+                            <label for="nameInput">그룹 이름: </label>
+                            <input type="text" name="nameInput">
+                        </div>
+                        <div class="groupPeriod">
+                            <label for="periodInput">여행 기간: </label>
+                            <input type="text" name="periodInput">
+                        </div>
+                        <div class="inviteCode">
+                            초대 코드 : dadkjalj;
+                        </div>
+                        <div class="tripPlace">
+                            <label for="placeInput">여행 장소: </label>
+                            <input type="text" name="placeInput">
+                        </div>
+                        <div class="memberNum">
+                            <label for="memberInput">총 인원: </label>
+                            <input type="text" name="memberInput">
+                        </div>
+                        <div class="btnContainer">
+                            <input type="button" value="생성" class="add_group">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="button" value="취소" class="modal_close">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!------  ------>
+
     <div class="topDiv">
         <img class="logo" src="image/logo.png">
         <b class="title">그룹 목록</b>
@@ -15,12 +55,12 @@
     <div class="main">
         <div class="groupContainer">
             <ul class="groupListContainer">
-                <li class="groupList">
+                <!-- <li class="groupList">
                     <div class="itemContainer">
                         <div class="imageContainer">
                             <img class="thumbnail" src="image/thumbnail_1.jpeg">
                         </div>
-                        <div class="infoContainer">
+                        <div class="groupInfo">
                             <div class="tripTitle">
                                 <span>제주 여행팀</span>
                             </div>
@@ -38,7 +78,7 @@
                         <div class="imageContainer">
                             <img class="thumbnail" src="image/thumbnail_1.jpeg">
                         </div>
-                        <div class="infoContainer">
+                        <div class="groupInfo">
                             <div class="tripTitle">
                                 <span>제주 여행팀</span>
                             </div>
@@ -50,13 +90,13 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="groupList">
+                </li> -->
+                <!-- <li class="groupList">
                     <div class="itemContainer">
                         <div class="imageContainer">
                             <img class="thumbnail" src="image/thumbnail_1.jpeg">
                         </div>
-                        <div class="infoContainer">
+                        <div class="groupInfo">
                             <div class="tripTitle">
                                 <span>제주 여행팀</span>
                             </div>
@@ -68,19 +108,16 @@
                             </div>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li>
-                    <input class="makeGroupBtn" type="button" value="dd" onClick="location.href='join.html'">
+                    <input class="makeGroupBtn" type="button" value=" ">
                 </li>
             </ul>
-        </div>
-        <div class="emptyDiv">
-
         </div>
         <hr>
         <div class="buttonContainer">
             <div class="joinBtnDiv">
-                <input class="button" type="button" value="가입하기" onClick="location.href='join.html'">
+                <input class="joinBtn" type="button" value="가입하기">
             </div>
         </div>
     </div>
