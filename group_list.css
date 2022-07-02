@@ -107,6 +107,11 @@ ul {
     /* width: calc((100% + var(--_j9kUiVvH) - var(--_QXfyzegW)*2)*var(--_ZhsJfzXT) - var(--_j9kUiVvH)); */
 }
 
+a{
+    text-decoration-line: none;
+    color:black;
+}
+
 .itemContainer {
     position:relative;
     border: 0px;

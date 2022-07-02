@@ -25,22 +25,24 @@ const $groupListContainer = document.querySelector(".groupListContainer");
 const groupItemTemplate = (newData) => {
     return `
     <li class="groupList">
-        <div class="itemContainer">
-            <div class="imageContainer">
-                <img class="thumbnail" src="image/thumbnail_1.jpeg">
+        <a href="archive.html">
+            <div class="itemContainer">
+                <div class="imageContainer">
+                    <img class="thumbnail" src="image/thumbnail_1.jpeg">
+                </div>
+                <div class="groupInfo">
+                    <div class="tripTitle">
+                        <span>${newData.name}</span>
+                    </div>
+                    <div class="tripPeriod">
+                        <span>${newData.period}</span>
+                    </div>
+                    <div class="tripMember">
+                        <span>${newData.memberNum}</span>
+                    </div>
+                </div>
             </div>
-            <div class="groupInfo">
-                <div class="tripTitle">
-                    <span>${newData.name}</span>
-                </div>
-                <div class="tripPeriod">
-                    <span>${newData.period}</span>
-                </div>
-                <div class="tripMember">
-                    <span>${newData.memberNum}</span>
-                </div>
-            </div>
-        </div>
+        </a>
     </li>
     `;
 }
@@ -70,8 +72,9 @@ function displayGroupData() {
     groups.map(item => {
         console.log(item);
         const groupItem = groupItemTemplate(item);
-        // if ()
-        $groupListContainer.insertAdjacentHTML("beforeend", groupItem);
+        
+        $('.makeBtn').before($(groupItem));
+        // $groupListContainer.insertAdjacentHTML("afterbegin", groupItem);
     })
 }
 
@@ -84,7 +87,7 @@ $add_btn.addEventListener('click', addGroup);
 function addGroup(event) {
     event.preventDefault();
     // var nameInput = document.querySelector(".nameInput");
-    console.log($(".nameInput").val())
+    // console.log($(".nameInput").val())
     groups.push({"name": $("input[name=nameInput]").val(), 
                 "period": $("input[name=periodInput]").val(),
                 "place": $("input[name=placeInput]").val(),
