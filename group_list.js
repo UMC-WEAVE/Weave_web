@@ -20,10 +20,10 @@ const groups = [
 const $modal = document.querySelector(".modal");
 const $join_modal = document.querySelector(".join_modal");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
-const $joinButton = document.querySelector(".joinBtn");
+// const $joinButton = document.querySelector(".joinBtn");
 const $close_btn = document.querySelector('.modal_close');
 const $add_btn = document.querySelector(".add_group");
-const $codeSendBtn = document.querySelector(".codeSendBtn");
+// const $codeSendBtn = document.querySelector(".codeSendBtn");
 const $groupListContainer = document.querySelector(".groupListContainer");
 
 const groupItemTemplate = (newData) => {
@@ -75,10 +75,10 @@ $makeGroupButton.addEventListener('click', () => {
     $modal.style.display = 'block';
 })
 
-$joinButton.addEventListener('click', () => {
-    $(".overlay").show();
-    $join_modal.style.display = 'block';
-})
+// $joinButton.addEventListener('click', () => {
+//     $(".overlay").show();
+//     $join_modal.style.display = 'block';
+// })
 
 $close_btn.addEventListener('click', () => {
     $(".overlay").hide();
@@ -90,10 +90,10 @@ $add_btn.addEventListener('click', () => {
     $modal.style.display = 'none';
 })
 
-$codeSendBtn.addEventListener('click', () => {
-    $(".overlay").hide();
-    $join_modal.style.display = 'none';
-})
+// $codeSendBtn.addEventListener('click', () => {
+//     $(".overlay").hide();
+//     $join_modal.style.display = 'none';
+// })
 
 /***add new group***/
 console.log(groups);
