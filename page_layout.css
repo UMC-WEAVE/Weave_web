@@ -10,7 +10,9 @@ html, body {
 .topnav {
   background-color: aliceblue;
   overflow: hidden;
-
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 /*nav_bar link 스타일*/
