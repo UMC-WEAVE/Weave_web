@@ -1,14 +1,14 @@
 /***data***/
 const groups = [
     {
-        // id: 1,
+        id: 1,
         "name": "제주 여행팀",
         "period": "2022-09-01~2022-09-04",
         "place": "제주도",
         "memberNum": "4명",
     },
     {
-        // id: 2,
+        id: 2,
         "name": "부산 가요",
         "period": "2022-07-01~2022-07-03",
         "place": "부산",
@@ -68,8 +68,10 @@ $add_btn.addEventListener('click', () => {
 /***load group data***/
 function displayGroupData() {
     groups.map(item => {
+        console.log(item);
         const groupItem = groupItemTemplate(item);
-        $groupListContainer.insertAdjacentHTML("afterbegin", groupItem);
+        // if ()
+        $groupListContainer.insertAdjacentHTML("beforeend", groupItem);
     })
 }
 

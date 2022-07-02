@@ -77,14 +77,15 @@
     margin: auto;
     padding: 4px;
     scroll-behavior: smooth;
-    width: 90%;
+    width: 300px;;
 }
 
 .groupListContainer {
     display:flex;
     list-style:none;
     justify-content: flex-start;
-    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 ul {
