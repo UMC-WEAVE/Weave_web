@@ -19,6 +19,7 @@ const groups = [
 
 const $modal = document.querySelector(".modal");
 const $join_modal = document.querySelector(".join_modal");
+const $makeBtn = document.querySelector(".makeBtn");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
 const $close_btn = document.querySelector('.modal_close');
 const $add_btn = document.querySelector(".add_group");
@@ -56,7 +57,7 @@ function displayGroupData() {
         console.log(item);
         const groupItem = groupItemTemplate(item);
         
-        $('.makeBtn').before($(groupItem));
+        $makeBtn.insertAdjacentHTML('afterend', groupItem);
     })
 }
 
@@ -112,7 +113,8 @@ function addGroup(event) {
 
         const newGroupItem = groupItemTemplate(groups[groups.length-1]);
         const groupList = document.querySelectorAll(".groupList");
-        groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
+        $makeBtn.insertAdjacentHTML('afterend', newGroupItem);
+        // groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
 
         $("input[name=nameInput]").val(" ");
         $("input[name=start_date]").val(" ");
