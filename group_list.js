@@ -22,6 +22,7 @@ const $join_modal = document.querySelector(".join_modal");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
 const $close_btn = document.querySelector('.modal_close');
 const $add_btn = document.querySelector(".add_group");
+const $groupForm = document.querySelector(".groupForm");
 const $groupListContainer = document.querySelector(".groupListContainer");
 
 const groupItemTemplate = (newData) => {
@@ -86,23 +87,46 @@ $close_btn.addEventListener('click', () => {
 console.log(groups);
 $add_btn.addEventListener('click', addGroup);
 
+function isNotNull(groupData) {
+    for (var i = 0; i < groupData.length; i++) {
+        if (groupData[i] == '' || groupData[i] == ' ')
+            return false;
+    }
+    return true;
+}
+
 function addGroup(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
-    groups.push({"name": $("input[name=nameInput]").val(), 
-                "start_date": $("input[name=start_date]").val(),
-                "end_date": $("input[name=end_date]").val(),
-                "memberNum": $("input[name=memberInput]").val(),});
+    console.log($groupForm);
 
-    const newGroupItem = groupItemTemplate(groups[groups.length-1]);
-    const groupList = document.querySelectorAll(".groupList");
-    groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
+    let groupData = [$groupForm.nameInput.value, $groupForm.start_date.value, $groupForm.end_date.value, $groupForm.memberInput.value];
+    console.log(groupData);
+    console.log("null? = " + isNotNull(groupData));
 
-    $("input[name=nameInput]").val(" ");
-    $("input[name=start_date]").val(" ");
-    $("input[name=end_date]").val(" ");
-    $("input[name=memberInput]").val(" ");
+    if (isNotNull(groupData)) {
+        groups.push({"name": $("input[name=nameInput]").val(), 
+        "start_date": $("input[name=start_date]").val(),
+        "end_date": $("input[name=end_date]").val(),
+        "memberNum": $("input[name=memberInput]").val(),});
 
-    $(".overlay").hide();
-    $modal.style.display = 'none';
+        const newGroupItem = groupItemTemplate(groups[groups.length-1]);
+        const groupList = document.querySelectorAll(".groupList");
+        groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
+
+        $("input[name=nameInput]").val(" ");
+        $("input[name=start_date]").val(" ");
+        $("input[name=end_date]").val(" ");
+        $("input[name=memberInput]").val(" ");
+
+        // $("input[name=nameInput]").attr("required", false);
+        // $("input[name=start_date]").attr("required", false);
+        // $("input[name=end_date]").attr("required", false);
+        // $("input[name=memberInput]").attr("required", false);
+
+        $(".overlay").hide();    //닫혀서 힌트메시지가 안뜨는 것.
+        $modal.style.display = 'none';
+    } else { 
+        alert('내용을 모두 입력해주세요.');
+    }
 }
