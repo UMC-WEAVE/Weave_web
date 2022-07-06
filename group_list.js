@@ -4,15 +4,15 @@ const groups = [
     {
         id: 1,
         "name": "제주 여행팀",
-        "period": "2022-09-01~2022-09-04",
-        "place": "제주도",
+        "start_date": "2022-09-01",
+        "end_date" : "2022-09-05",
         "memberNum": "4명",
     },
     {
         id: 2,
         "name": "부산 가요",
-        "period": "2022-07-01~2022-07-03",
-        "place": "부산",
+        "start_date": "2022-07-01",
+        "end_date" : "2022-07-03",
         "memberNum": "3명",
     },
 ];
@@ -37,7 +37,7 @@ const groupItemTemplate = (newData) => {
                         <span>${newData.name}</span>
                     </div>
                     <div class="tripPeriod">
-                        <span>${newData.period}</span>
+                        <span>${newData.start_date} ~ ${newData.end_date}</span>
                     </div>
                     <div class="tripMember">
                         <span>${newData.memberNum}</span>
@@ -89,8 +89,8 @@ $add_btn.addEventListener('click', addGroup);
 
 function addGroup(event) {
     groups.push({"name": $("input[name=nameInput]").val(), 
-                "period": $("input[name=periodInput]").val(),
-                "place": $("input[name=placeInput]").val(),
+                "start_date": $("input[name=start_date]").val(),
+                "end_date": $("input[name=end_date]").val(),
                 "memberNum": $("input[name=memberInput]").val(),});
 
     const newGroupItem = groupItemTemplate(groups[groups.length-1]);
@@ -98,7 +98,7 @@ function addGroup(event) {
     groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
 
     $("input[name=nameInput]").val(" ");
-    $("input[name=periodInput]").val(" ");
-    $("input[name=placeInput]").val(" ");
+    $("input[name=start_date]").val(" ");
+    $("input[name=end_date]").val(" ");
     $("input[name=memberInput]").val(" ");
 }
