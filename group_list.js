@@ -78,16 +78,17 @@ $close_btn.addEventListener('click', () => {
     $modal.style.display = 'none';
 })
 
-$add_btn.addEventListener('click', () => {
-    $(".overlay").hide();
-    $modal.style.display = 'none';
-})
+// $add_btn.addEventListener('click', () => {
+
+// })
 
 /***add new group***/
 console.log(groups);
 $add_btn.addEventListener('click', addGroup);
 
 function addGroup(event) {
+    event.preventDefault();
+
     groups.push({"name": $("input[name=nameInput]").val(), 
                 "start_date": $("input[name=start_date]").val(),
                 "end_date": $("input[name=end_date]").val(),
@@ -101,4 +102,7 @@ function addGroup(event) {
     $("input[name=start_date]").val(" ");
     $("input[name=end_date]").val(" ");
     $("input[name=memberInput]").val(" ");
+
+    $(".overlay").hide();
+    $modal.style.display = 'none';
 }

@@ -17,23 +17,23 @@
                     그룹 생성하기
                 </div>
                 <div class="infoContainer">
-                    <form action="" method="get" class="groupForm">
+                    <form class="groupForm">
                         <div class="groupName">
                             <label for="nameInput">그룹 이름: </label>
-                            <input type="text" name="nameInput">
+                            <input type="text" name="nameInput" required>
                         </div>
                         <div class="tripPeriod">
                             <label for="start_date">여행 기간: </label>
-                            <input type="date" name="start_date"> ~ 
-                            <input type="date" name="end_date">
+                            <input type="date" name="start_date" required> ~ 
+                            <input type="date" name="end_date" required>
                         </div>
                         <div class="memberNum">
                             <label for="memberInput">총 인원: </label>
-                            <input type="text" name="memberInput"> 명
+                            <input type="text" name="memberInput" required> 명
                         </div>
                         <div class="btnContainer">
-                            <input type="button" value="생성" class="add_group">&nbsp;&nbsp;&nbsp;&nbsp;
-                            <input type="button" value="취소" class="modal_close">
+                            <input type="submit" value="생성" class="add_group">&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="reset" value="취소" class="modal_close">
                         </div>
                     </form>
                 </div>
