@@ -80,13 +80,10 @@ $close_btn.addEventListener('click', () => {
     $modal.style.display = 'none';
 })
 
-// $add_btn.addEventListener('click', () => {
-
-// })
 
 /***add new group***/
 console.log(groups);
-$add_btn.addEventListener('click', addGroup);
+$groupForm.addEventListener('submit', addGroup);
 
 function isNotNull(groupData) {
     for (var i = 0; i < groupData.length; i++) {
@@ -97,12 +94,12 @@ function isNotNull(groupData) {
 }
 
 function addGroup(event) {
-    // event.preventDefault();
+    event.preventDefault();
 
     console.log($groupForm);
 
     let groupData = [$groupForm.nameInput.value, $groupForm.start_date.value, $groupForm.end_date.value, $groupForm.memberInput.value];
-    console.log(groupData);
+    console.log(groupData[1]);
     console.log("null? = " + isNotNull(groupData));
 
     if (isNotNull(groupData)) {
