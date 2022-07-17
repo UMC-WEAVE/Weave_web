@@ -1,0 +1,153 @@
+/*MY-PAGE: profile, terms, aboutDev, rmAccount*********************************************/
+
+.category {
+  margin: 15rem 25rem;
+}
+
+.category .heading,
+.category .summary {
+  display: inline;
+}
+
+.category .summary {
+  font-family: NanumBG-ExtraLight;
+  font-size: 2rem;
+  color: rgb(48, 48, 48);
+}
+
+.category .summary span {
+  font-size: larger;
+  color: rgb(52, 131, 192);
+}
+
+.category .box-container #profile {
+  grid-area: profile;
+}
+
+.category .box-container #terms {
+  grid-area: terms;
+}
+
+.category .box-container #aboutDev {
+  grid-area: aboutDev;
+}
+
+.category .box-container #rmAccount {
+  grid-area: rmAccount;
+}
+
+.category .box-container {
+  display: grid;
+  display: -ms-grid;
+  grid-template-areas:
+    'profile terms'
+    'profile aboutDev'
+    'profile rmAccount';
+  gap: 10px;
+  padding: 10px;
+  margin-top: 4rem;
+}
+
+.category .box-container .box {
+  background-color: #ffffff;
+  font-size: 30px;
+  padding: 3rem 4rem 3rem 4rem;
+  border: 0.2rem solid #8cabc9;
+  border-radius: 2%;
+}
+
+.category .box-container .box img,
+.category .box-container .box h5 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.category .box-container .box img {
+  height: 3rem;
+  width: 3rem;
+}
+
+.category .box-container .box h5 {
+  font-size: 2rem;
+  color: rgb(48, 48, 48);
+}
+
+.category .box-container .box p {
+  display: inline-block;
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-left: 4rem;
+  color: #15212d;
+}
+
+.category .box-container .box .btn {
+  display: block;
+  margin-top: 1rem;
+  margin-left: 4rem;
+  text-align: center;
+  border-radius: 0;
+  padding: 0.4rem;
+  font-family: NanumBG-ExtraLight;
+}
+
+/*MY-PAGE: profile*********************************************/
+.category .box-container #profile h5,
+.category .box-container #profile p,
+.category .box-container #profile .btn {
+  display: block;
+}
+
+.category .box-container #profile {
+  text-align: center;
+}
+
+.category .box-container #profile img {
+  height: 20rem;
+  width: 20rem;
+}
+
+.category .box-container #profile h5 {
+  font-size: 4.5rem;
+  margin-bottom: 2rem;
+}
+
+.category .box-container #profile p,
+.category .box-container #profile .btn {
+  padding: 0;
+  margin: 0;
+  line-height: 3rem;
+}
+
+/*MY-PAGE: terms, aboutDev, rmAccount btn*********************************************/
+#terms .btn,
+#aboutDev .btn,
+#rmAccount .btn {
+  display: inline-block;
+  padding: 0.7rem 3.5rem;
+  text-align: start;
+  width: 100%;
+  margin-left: 0;
+  font-weight: bold;
+}
+
+.category .box-container .box .info {
+  border: 0.1rem solid #8cabc9;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+.category .box-container .box .info-title {
+  font-size: 700;
+  color: rgb(52, 131, 192);
+}
+
+#aboutDev .info-title {
+  width: 7rem;
+}
+
+#profile .btn {
+  padding: 1rem 5rem;
+  width: 100%;
+  text-align: center;
+}

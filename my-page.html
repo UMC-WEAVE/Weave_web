@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🌊Weave</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/my-page.css">
+  <link rel="stylesheet" href="css/team-modal.css">
+</head>
+
+<body>
+  <!-- my-page category section starts -->
+
+  <section class="category">
+
+    <h3 class="heading">마이페이지</h3>
+    <h4 class="summary"><span>user1</span> 님은 weave와 함께 지금까지 &nbsp;<span>n</span> 번의 여행을 떠났어요.</h4>
+
+    <div class="box-container">
+      <div class="box" id="profile">
+        <img src="image/woman-profile1.png" alt="">
+        <h5>user1</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+          commodo consequat.<br> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+          nulla pariatur.<br> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+          animid est laborum.</p><br>
+        <button class="btn" onclick="profileFunction()">more info</button>
+        <div class="info" id="profile-info">
+          <p class="info-title">My Profile</p>
+          <p>more info of user1</p>
+        </div>
+      </div>
+
+      <div class="box" id="terms">
+        <img class="icon" src="icon/terms-and-conditions-icon.png" alt="">
+        <h5>이용약관</h5><br>
+        <button class="btn" onclick="termsFunction()">Terms and Conditions</button>
+        <div class="info" id="terms-info">
+          <p class="info-title">Weave Terms of Use</p><br>
+          <p>weave terms and conditions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.<br> Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur.</p><br>
+          <p class="info-title">Weave Privacy Policy</p><br>
+          <p>weave terms and conditions Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.<br>Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.<br> Duis aute irure dolor in reprehenderit in voluptate
+            velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        </div>
+      </div>
+
+      <div class="box" id="aboutDev">
+        <img class="icon" src="icon/about-developers-icon.png" alt="">
+        <h5>개발자 소개</h5><br>
+        <button class="btn" onclick="aboutDevFunction()">About the Developers</button><br>
+        <div class="info" id="aboutDev-info">
+          <p class="info-title">WEB</p>
+          <p>&nbsp;&nbsp; 현우 부엉 테리</p><br>
+          <p class="info-title">SERVER</p>
+          <p>&nbsp;&nbsp; 낑깡 무니 오베 진저</p><br>
+          <p class="info-title">ANDROID</p>
+          <p>&nbsp;&nbsp; 지미 지니</p><br>
+          <p class="info-title">DESIGN</p>
+          <p>&nbsp;&nbsp; 프랭키 할끼</p><br>
+        </div>
+      </div>
+
+      <div class="box" id="rmAccount">
+        <img class="icon" src="icon/delete-account-icon.png" alt="">
+        <h5>회원 탈퇴</h5><br>
+        <input class="btn" type="button" value="delete my account" onclick="order('rmAccount')">
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- category section ends -->
+
+  <!-- external js file link  -->
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+  <!-- custom js file link  -->
+  <script src="js/footer.js"></script>
+  <script src="js/navbar.js"></script>
+
+</body>
+
+</html>

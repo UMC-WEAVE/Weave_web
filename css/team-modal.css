@@ -1,0 +1,212 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 45%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  font-size: 1.5rem;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0
+  }
+
+  to {
+    top: 0;
+    opacity: 1
+  }
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 3rem;
+  background-color: #327cb1;
+  color: white;
+}
+
+.modal-body {
+  padding: 3rem;
+}
+
+.modal-footer {
+  padding: 0rem 3rem 3rem 3rem;
+  background-color: #327cb1;
+  color: white;
+}
+
+.modal .modal-body #user-name1 {
+  grid-area: user-name1;
+}
+
+.modal .modal-body #user-name2 {
+  grid-area: user-name2;
+}
+
+.modal .modal-body #user-name3 {
+  grid-area: user-name3;
+}
+
+.modal .modal-body #user-name4 {
+  grid-area: user-name4;
+}
+
+.modal .modal-body #user-pic1 {
+  grid-area: user-pic1;
+}
+
+.modal .modal-body #user-pic2 {
+  grid-area: user-pic2;
+}
+
+.modal-body #user-pic3 {
+  grid-area: user-pic3;
+}
+
+.modal .modal-body #user-pic4 {
+  grid-area: user-pic4;
+}
+
+.modal .modal-body {
+  display: grid;
+  display: -ms-grid;
+  grid-template-areas:
+    'user-pic1 user-name1'
+    'user-pic2 user-name2'
+    'user-pic3 user-name3'
+    'user-pic4 user-name4';
+  gap: 1.5rem;
+  padding: 3.5rem 3rem 3.5rem 6rem;
+  float: left;
+}
+
+.modal .modal-body img {
+  height: 4rem;
+  width: 4rem;
+  vertical-align: middle;
+}
+
+.modal .modal-body p {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #15212d;
+  padding-top: 1rem;
+  vertical-align: middle;
+}
+
+/*team-modal-invite*********************************************/
+.invite {
+  background: rgb(243, 249, 254);
+}
+
+.invite .content {
+  max-width: 70rem;
+  padding-left: 12rem;
+  margin: 5rem auto;
+}
+
+.invite h1.heading {
+  padding: 0;
+}
+
+.invite .content p {
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #15212d;
+}
+
+.invite .content form {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 5rem;
+  border: 0.2rem solid #327cb1;
+  padding: .7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.invite .content form .email {
+  width: 100%;
+  background: none;
+  text-transform: none;
+  font-size: 1.6rem;
+  color: #15212d;
+  padding: 0 1rem;
+}
+
+.invite .content form .btn {
+  font-weight: lighter;
+  margin-top: 0;
+  border-radius: 5rem;
+  background: #327cb1;
+  color: white;
+}
+
+.invite .content form .btn:hover {
+  background: none;
+  color: #15212d;
+}
