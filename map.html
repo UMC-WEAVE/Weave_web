@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>지도</title> 
+    <link rel="stylesheet" href="map.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="topDiv">
+            <div class="textDiv">
+                <b class="title">지도로 보는 여행</b><br><br>
+                지도에 여행 일정이 표시되어 있어 한 눈에 거리와 동선을 파악할 수 있어요.
+            </div>
+            <div class="categoryContainer">
+                <div class="categoryBtn">카테고리 선택</div>
+                <ul class="category">
+                    <li class="list">카페</li>
+                    <li class="list">음식점</li>
+                    <li class="list">숙박</li>
+                    <li class="list">관광명소</li>
+                    <li class="list">문화시설</li>
+                    <li class="list">편의점</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 지도를 표시할 div 입니다 -->
+        <div id="map"></div>
+    </div>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ccaf9cd422b6cbe03f3ba3775e12f987&libraries=services"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ccaf9cd422b6cbe03f3ba3775e12f987"></script>
+    <script src="map.js"></script>
+</body>
+</html>

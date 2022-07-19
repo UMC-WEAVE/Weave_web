@@ -1,0 +1,228 @@
+/* modal */
+.overlay {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    background-color: rgba(0,0,0, 0.7);
+    overflow-x: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 10%;
+    left:30%;
+
+    width: 700px;
+    height: 500px;
+
+    display: none;
+    z-index: 2;
+
+    border-radius: 20px;
+    background-color: white;
+}
+
+/* .modal_top {
+    display:flex;
+    flex-direction: row;
+} */
+
+/* .modal_content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+.modalTitle {
+    font-size: 24px;
+    font-weight: bold;
+    /* padding: 30px; */
+
+    position: absolute;
+    top: 50px;
+    left: 70px;
+}
+
+.modalCloseBtn{
+    position: absolute; 
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.image {
+    /*width: 200px;
+    height: 200px;
+    background-color: gray;
+    margin-bottom: 30px;*/
+    z-index: 5;
+} 
+
+.groupForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    position: absolute;
+    top: 150px;
+    left: 70px;
+}
+
+.infoInputContainer {
+    display: grid;
+    place-items: left;
+    gap: 20px;
+}
+
+.btnContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px;
+}
+
+/* *************** modal end*/
+
+.topDiv {
+    padding: 30px 10px 10px 50px;
+}
+
+.logo {
+    width:350px;
+    height:100px;
+}
+
+.title {
+    font-size:20px;
+    margin-bottom: 0px;
+}
+
+.main {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 10%;
+}
+
+/* .gruopContainer {
+    display: block;
+    /* margin: auto; */
+    /* padding: 4px; */
+    /* scroll-behavior: smooth; */
+    /* width: 300px;; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.groupContainer {
+    width: 90%;
+
+    align-content: center;
+
+}
+
+.groupListContainer {
+    /* width: 90%; */
+
+    display:flex;
+    list-style:none;
+    justify-content: flex-start;
+}
+
+ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px; 
+    padding-inline-start: 40px;
+}
+
+.groupList {
+    margin:20px;
+    width:260px;
+}
+
+a{
+    text-decoration-line: none;
+    color:black;
+}
+
+.itemContainer {
+    position:relative;
+    width: 250px;
+    height: 250px;
+
+    padding-left: 0;
+    border: 0px;
+    border-radius: 20px;
+    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+}
+
+.makeGroupBtn:hover, .itemContainer:hover {
+    background-color: gray;
+}
+
+.imageContainer {
+    padding-bottom: 8px;
+}
+
+.thumbnail {
+    height: 150px;
+    width: 250px;
+
+    /* display:block; */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    /* border-bottom-left-radius: ;
+    border-bottom-left-radius: 'value'; */
+}
+
+.groupInfo {
+    display: grid;
+    gap: 8px;
+    padding:4px;
+}
+
+.tripTitle, .tripPeriod, .tripMember {
+    display:flex;
+    flex-direction: row;
+}
+
+.tripMember {
+    justify-content: flex-end;
+}
+
+hr {
+    margin-top: 50px;
+    width:90%;
+}
+
+.buttonContainer {
+    display: grid;
+    gap: 8px;
+    /* margin:30px; */
+}
+
+.makeGroupBtn {
+    margin:20px;
+    padding:5px;
+    width:150px;
+    height:250px;
+    border:0px;
+    border-radius: 20px;
+    font-size:30px;
+    font-weight:lighter;
+    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+}
+
+.joinBtnDiv {
+    margin: auto;
+    padding: 0 20px;
+}
