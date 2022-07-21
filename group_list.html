@@ -23,7 +23,7 @@
                             <div class="image">
                             </div>
                             <div class="imageInput">
-                                <input type="file" name="image" onchange="loadFile(this);" required>
+                                <input type="file" name="image" onchange="loadFile(this);" accept=".jpg, .jpeg, .png" required>
                             </div>
                         </div>
                         <div class="infoInputContainer">
@@ -48,19 +48,30 @@
     </div>
     <!------ modal end ------>
 
-    <div class="topDiv">
-        <img class="logo" src="image/logo.png">
+    <div class="noTeam">
+        <div class="topDiv">
+            <img class="logo" src="image/logo.png">
+            <div class="textDiv">
+                <div class="text_noTeam">팀이 없습니다.<br>팀에 참여하거나 만들어보세요!</div>
+                <div class="makeGroup_noTeam"><b>팀 생성</b><br><br>팀의 리더가 되어<br>팀을 직접 초대해요!</div>
+            </div>
+        </div>
     </div>
-    <div class="main">
-        <h3 class="title">팀 목록</h3><br>
-        지금까지 내가 참여했던 팀들을 볼 수 있어요.
-        <div class="groupContainer">
-            <ul class="groupListContainer">
-                <li class="makeBtn">
-                    <input class="makeGroupBtn" type="button" value="+">
-                </li>
-                <!-- insertadjacentHTML(groupView) -->
-            </ul>
+    <div class="haveTeam">
+        <div class="topDiv">
+            <img class="logo" src="image/logo.png">
+        </div>
+        <div class="main">
+            <h3 class="title">팀 목록</h3><br>
+            지금까지 내가 참여했던 팀들을 볼 수 있어요.
+            <div class="groupContainer">
+                <ul class="groupListContainer">
+                    <li class="makeBtn">
+                        <input class="makeGroupBtn" type="button" value="+">
+                    </li>
+                    <!-- insertadjacentHTML(groupView) -->
+                </ul>
+            </div>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

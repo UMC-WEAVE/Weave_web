@@ -53,10 +53,10 @@
 }
 
 .image {
-    /*width: 200px;
+    width: 200px;
     height: 200px;
-    background-color: gray;
-    margin-bottom: 30px;*/
+    background-color: whitesmoke;
+    margin-bottom: 30px;
     z-index: 5;
 } 
 
@@ -85,6 +85,10 @@
 
 /* *************** modal end*/
 
+.noTeam, .haveTeam {
+    display: none;
+}
+
 .topDiv {
     padding: 30px 10px 10px 50px;
 }
@@ -92,6 +96,30 @@
 .logo {
     width:350px;
     height:100px;
+}
+
+.textDiv {
+    display: grid;
+    place-items: center;
+    
+}
+
+.text_noTeam {
+    font-size: 56px;
+    font-weight: bold;
+}
+
+.makeGroup_noTeam {
+    width: 200px;
+    padding: 20px;
+
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+
+.makeGroup_noTeam:hover {
+    background-color: grey;
+    color: white;
 }
 
 .title {
@@ -106,22 +134,10 @@
     margin-left: 10%;
 }
 
-/* .gruopContainer {
-    display: block;
-    /* margin: auto; */
-    /* padding: 4px; */
-    /* scroll-behavior: smooth; */
-    /* width: 300px;; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
 .groupContainer {
     width: 90%;
 
     align-content: center;
-
 }
 
 .groupListContainer {

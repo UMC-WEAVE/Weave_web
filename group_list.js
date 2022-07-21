@@ -1,52 +1,52 @@
 //더미데이터
 const groups = [
-    {
-        id: 1,
-        "name": "제주 여행팀",
-        "start_date": "2022-09-01",
-        "end_date" : "2022-09-05",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
-    {
-        id: 2,
-        "name": "부산 가요",
-        "start_date": "2022-07-01",
-        "end_date" : "2022-07-03",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
+    // {
+    //     id: 1,
+    //     "name": "제주 여행팀",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
+    // {
+    //     id: 2,
+    //     "name": "부산 가요",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
 
-    //가로스크롤을 위한 test data
-    {
-        id: 2,
-        "name": "부산 가요",
-        "start_date": "2022-07-01",
-        "end_date" : "2022-07-03",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
-    {
-        id: 2,
-        "name": "부산 가요",
-        "start_date": "2022-07-01",
-        "end_date" : "2022-07-03",
-        "memberNum": "3명",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
-    {
-        id: 2,
-        "name": "부산 가요",
-        "start_date": "2022-07-01",
-        "end_date" : "2022-07-03",
-        "memberNum": "3명",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
-    {
-        id: 2,
-        "name": "부산 가요",
-        "start_date": "2022-07-01",
-        "end_date" : "2022-07-03",
-        "memberNum": "3명",
-        "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
-    },
+    // //가로스크롤을 위한 test data
+    // {
+    //     id: 2,
+    //     "name": "부산 가요",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
+    // {
+    //     id: 2,
+    //     "name": "부산 가요",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "memberNum": "3명",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
+    // {
+    //     id: 2,
+    //     "name": "부산 가요",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "memberNum": "3명",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
+    // {
+    //     id: 2,
+    //     "name": "부산 가요",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "memberNum": "3명",
+    //     "thumbnail" : `<img class="thumbnail" src=image/thumbnail_1.jpeg>`
+    // },
 ];
 
 //초기 화면 세팅
@@ -54,11 +54,15 @@ const $modal = document.querySelector(".modal");
 const $join_modal = document.querySelector(".join_modal");
 const $makeBtn = document.querySelector(".makeBtn");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
+const $makeGroup_noTeam = document.querySelector(".makeGroup_noTeam");
 const $close_btn = document.querySelector('.modal_close');
 const $modalCloseBtn = document.querySelector('modalCloseBtn');
 const $add_btn = document.querySelector(".add_group");
 const $groupForm = document.querySelector(".groupForm");
 const $groupListContainer = document.querySelector(".groupListContainer");
+
+const $noTeam = document.querySelector('.noTeam');
+const $haveTeam = document.querySelector('.haveTeam');
 
 var newImage;
 
@@ -68,7 +72,7 @@ const groupItemTemplate = (newData) => {
         <a href="archive.html">
             <div class="itemContainer">
                 <div class="imageContainer">
-                    ${newData.thumbnail}
+                    <img class="thumbnail" src="${`${newData.thumbnail}`}">
                 </div>
                 <div class="groupInfo">
                     <div class="tripTitle">
@@ -86,12 +90,23 @@ const groupItemTemplate = (newData) => {
 
 //group 카드뷰 띄우기
 function displayGroupData() {
-    groups.map(item => {
-        console.log(item);
-        const groupItem = groupItemTemplate(item);
-        
-        $makeBtn.insertAdjacentHTML('afterend', groupItem);
-    })
+    if (groups.length == 0) {
+        $haveTeam.style.display = 'none';//데이터 연결시 삭제할 부분
+        $noTeam.style.display = 'block';
+    } else {
+        $noTeam.style.display = 'none';//데이터 연결시 삭제할 부분
+        $haveTeam.style.display = 'block';
+
+        console.log("execute remove");
+        $( 'li.groupList' ).remove();
+
+        groups.map(item => {
+            const groupItem = groupItemTemplate(item);
+            
+            $makeBtn.insertAdjacentHTML('afterend', groupItem);
+        })
+        console.log(groups);
+    }
 }
 
 displayGroupData();
@@ -106,6 +121,11 @@ $makeGroupButton.addEventListener('click', () => {
     $modal.style.display = 'block';
 })
 
+$makeGroup_noTeam.addEventListener('click', () => {
+    $(".overlay").show();
+    $modal.style.display = 'block';
+})
+
 $close_btn.addEventListener('click', () => {
     $(".overlay").hide();
     $modal.style.display = 'none';
@@ -115,7 +135,6 @@ $close_btn.addEventListener('click', () => {
 //     $(".overlay").hide();
 //     $modal.style.display = 'none';
 // })
-
 
 //새로운 그룹 추가
 console.log(groups);
@@ -139,36 +158,47 @@ function addGroup(event) {
 
     // console.log("null? = " + isNotNull(groupData));
 
-    //유효성검사
-    // if (isNotNull(groupData)) {
-        groups.push({"name": $("input[name=nameInput]").val(), 
-        "start_date": $("input[name=start_date]").val(),
-        "end_date": $("input[name=end_date]").val(),
-        // "thumbnail" : $("input[name=imageInput]").val()
-        "thumbnail" : newImage
-        });
+    var name = $("input[name=nameInput]").val();
+    var start_date = $("input[name=start_date]").val();
+    var end_date = $("input[name=end_date]").val();
+    var thumbnail = $(".preview").attr("src");
 
-        console.log("thumbnail: " + newImage);
+    //유효성검사 -> 둘 다 잘못되었을 경우도 생각 + 잘못 입력한 칸 테두리 빨갛게 변하기
+    if (name.length >= 20) {
+        alert('20자 이하로 입력해주세요.');
+        return;
+    }
+    if (start_date > end_date) {
+        alert('여행 종료일이 시작일보다 빠릅니다.');
+        return;
+    }
 
-        const newGroupItem = groupItemTemplate(groups[groups.length-1]);
-        const groupList = document.querySelectorAll(".groupList");
-        $makeBtn.insertAdjacentHTML('afterend', newGroupItem);
-        // groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
+    groups.push({"name": name, 
+    "start_date": start_date,
+    "end_date": end_date,
+    "thumbnail" : thumbnail
+    });
 
-        $("input[name=nameInput]").val(" ");
-        $("input[name=start_date]").val(" ");
-        $("input[name=end_date]").val(" ");
-        $("input[name=imageInput]").val(" ");
+    console.log("thumbnail: " + newImage);
 
-        // $("input[name=nameInput]").attr("required", false);
-        // $("input[name=start_date]").attr("required", false);
-        // $("input[name=end_date]").attr("required", false);
+    // const newGroupItem = groupItemTemplate(groups[groups.length-1]);
+    // const groupList = document.querySelectorAll(".groupList");
+    // $makeBtn.insertAdjacentHTML('afterend', newGroupItem);
+    // groupList[groupList.length-1].insertAdjacentHTML('afterend', newGroupItem);
 
-        $(".overlay").hide();    //닫혀서 힌트메시지가 안뜨는 것.
-        $modal.style.display = 'none';
-    // } else { 
-    //     alert('내용을 모두 입력해주세요.');
-    // }
+    $("input[name=nameInput]").val(" ");
+    $("input[name=start_date]").val(" ");
+    $("input[name=end_date]").val(" ");
+    newImage.remove();
+
+    // $("input[name=nameInput]").attr("required", false);
+    // $("input[name=start_date]").attr("required", false);
+    // $("input[name=end_date]").attr("required", false);
+
+    $(".overlay").hide();    //닫혀서 힌트메시지가 안뜨는 것.
+    $modal.style.display = 'none';
+
+    displayGroupData();
 }
 
 
@@ -181,35 +211,23 @@ function loadFile(input) {
     // var name = document.getElementById('fileName');
     // name.textContent = file.name;
 
-  	//새로운 이미지 div 추가
-      newImage = document.createElement("img");
-      newImage.setAttribute("class", 'img');
-
+    console.log(newImage);
+    if (newImage == undefined) {
+        //새로운 이미지 div 추가
+        newImage = document.createElement("img");
+        newImage.setAttribute("class", 'preview');
+    }
     //이미지 source 가져오기
     newImage.src = URL.createObjectURL(file);   
     console.log(newImage);
 
-    newImage.style.width = "70%";
-    newImage.style.height = "70%";
-    // newImage.style.visibility = "hidden";   //버튼을 누르기 전까지는 이미지를 숨긴다
-    newImage.style.objectFit = "contain";
+    newImage.style.width = "200px";
+    newImage.style.height = "200px";
+    newImage.style.objectFit = "cover";
 
     //이미지를 image-show div에 추가
     var container = document.querySelector('.image');
     container.appendChild(newImage);
+    console.log($(".preview").attr("src"));
+
 };
-
-// var submit = document.getElementById('submitButton');
-// submit.onclick = showImage;     //Submit 버튼 클릭시 이미지 보여주기
-
-// function showImage() {
-//     var newImage = document.getElementById('image-show').lastElementChild;
-  
-//     //이미지는 화면에 나타나고
-//     newImage.style.visibility = "visible";
-  
-//     //이미지 업로드 버튼은 숨겨진다
-//     document.getElementById('image-upload').style.visibility = 'hidden';
-
-//     document.getElementById('fileName').textContent = null;     //기존 파일 이름 지우기
-// }

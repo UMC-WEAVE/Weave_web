@@ -1,6 +1,9 @@
-const $form = document.querySelector('.form');
+var url = location.href;
+console.log(url);
 
-$form.addEventListener('submit', () => {
-    event.preventDefault();
-    console.log($("input[name=imageInput]").val());
-});
+var searchParams = new URL(url).searchParams;
+
+var code = searchParams.get('code');
+
+console.log(code);
+alert(code);
