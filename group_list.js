@@ -55,11 +55,13 @@ const $join_modal = document.querySelector(".join_modal");
 const $makeBtn = document.querySelector(".makeBtn");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
 const $makeGroup_noTeam = document.querySelector(".makeGroup_noTeam");
-const $close_btn = document.querySelector('.modal_close');
+const $close_btn = document.querySelector('.modalCloseBtn');
 const $modalCloseBtn = document.querySelector('modalCloseBtn');
 const $add_btn = document.querySelector(".add_group");
 const $groupForm = document.querySelector(".groupForm");
 const $groupListContainer = document.querySelector(".groupListContainer");
+const $itemContainer = document.querySelector(".itemContainer");
+const $thumbnail = document.querySelector(".thumbnail");
 
 const $noTeam = document.querySelector('.noTeam');
 const $haveTeam = document.querySelector('.haveTeam');
@@ -106,6 +108,10 @@ function displayGroupData() {
             $makeBtn.insertAdjacentHTML('afterend', groupItem);
         })
         console.log(groups);
+
+        //아이템 컨테이너 hover 오버레이
+        // $itemContainer.addEventListener('mouseover', () => {
+        // $thumbnail.style.opacity = 0.5;
     }
 }
 

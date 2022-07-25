@@ -18,7 +18,7 @@
     height: 500px;
 
     display: none;
-    z-index: 2;
+    z-index: 10;
 
     border-radius: 20px;
     background-color: white;
@@ -85,17 +85,38 @@
 
 /* *************** modal end*/
 
+/* .body {
+    overflow-x: hidden;
+} */
+
 .noTeam, .haveTeam {
     display: none;
 }
 
 .topDiv {
-    padding: 30px 10px 10px 50px;
+    /* padding: 30px 10px 10px 50px; */
+    width: 100%;
 }
 
 .logo {
     width:350px;
     height:100px;
+    
+    /* position: absolute;
+    left: 25px;
+    top: 43px; */
+}
+
+.hrDiv {
+    position: absolute;
+    width: 99.9vw;
+    height: 0vh;
+    left: 0px; 
+    top: 135px;
+    margin: 0px;
+    padding: 0px;
+    
+    border: 1px solid #B6B6B6;
 }
 
 .textDiv {
@@ -105,21 +126,59 @@
 }
 
 .text_noTeam {
+    /* font-size: 56px;
+    font-weight: bold; */
+    position: absolute;
+    left: 172px;
+    top: 300px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
     font-size: 56px;
-    font-weight: bold;
+    line-height: 140%;
+    /* or 90px */
+
+
+    color: #000000;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 .makeGroup_noTeam {
-    width: 200px;
-    padding: 20px;
+    width: 314px;
+    height: 135px;
+    padding: 20px; 
 
-    background-color: whitesmoke;
+    position: absolute;
+    top: 550px; 
+
+    background: #EAEAEA;
     border-radius: 20px;
 }
 
 .makeGroup_noTeam:hover {
-    background-color: grey;
-    color: white;
+    background-color: #AFAFAF;;
+    color: #FFFFFF;
+}
+
+.btnTitle {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+.btnText {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
 }
 
 .title {
@@ -128,14 +187,14 @@
 }
 
 .main {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    margin-left: 10%;
+    position: absolute;
+    left: 250px;
+    top: 197px;
+    width: 90%;
 }
 
 .groupContainer {
-    width: 90%;
+    width: 88%;
 
     align-content: center;
 }
@@ -143,9 +202,10 @@
 .groupListContainer {
     /* width: 90%; */
 
-    display:flex;
-    list-style:none;
+    display: flex;
+    list-style: none;
     justify-content: flex-start;
+    padding-left: 0px;
 }
 
 ul {
@@ -172,32 +232,56 @@ a{
 
 .itemContainer {
     position:relative;
+    width: 280px;
+    height: 250px;
+
+    border: 0px;
+    border-radius: 20px;
+    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+}
+
+.makeGroupBtn:hover, .itemContainer:hover{
+    background-color: gray;
+}
+
+.itemContainer:hover .thumbnail {
+    opacity: 0.5;
+}
+
+/* .itemOverlay {
+    position:absolute;
+    z-index: 3;
+
     width: 250px;
     height: 250px;
 
     padding-left: 0;
     border: 0px;
     border-radius: 20px;
-    box-shadow: -0.5px 0.5px black, 0.5px -0.5px black;
+    
+    background-color: black;
+    opacity: 0;
 }
 
-.makeGroupBtn:hover, .itemContainer:hover {
-    background-color: gray;
-}
+.itemOverlay:hover {
+    opacity: 0.5;
+} */
 
 .imageContainer {
     padding-bottom: 8px;
 }
 
 .thumbnail {
+    width: 280px;
     height: 150px;
-    width: 250px;
 
     /* display:block; */
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     /* border-bottom-left-radius: ;
     border-bottom-left-radius: 'value'; */
+
+    object-fit: cover;
 }
 
 .groupInfo {
@@ -228,6 +312,8 @@ hr {
 
 .makeGroupBtn {
     margin:20px;
+    margin-left: 1px;
+    margin-right: 0px;
     padding:5px;
     width:150px;
     height:250px;
