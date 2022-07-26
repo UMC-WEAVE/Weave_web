@@ -178,6 +178,10 @@ function addGroup(event) {
         alert('여행 종료일이 시작일보다 빠릅니다.');
         return;
     }
+    if (thumbnail == undefined) {
+        alert('사진을 추가해주세요.');
+        return;
+    }
 
     groups.push({"name": name, 
     "start_date": start_date,
@@ -227,8 +231,8 @@ function loadFile(input) {
     newImage.src = URL.createObjectURL(file);   
     console.log(newImage);
 
-    newImage.style.width = "200px";
-    newImage.style.height = "200px";
+    newImage.style.width = "264px";
+    newImage.style.height = "264px";
     newImage.style.objectFit = "cover";
 
     //이미지를 image-show div에 추가

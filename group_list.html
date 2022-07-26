@@ -14,31 +14,37 @@
         <div class="modal">
             <div class="modal_content">
                 <div class="modal_top">
-                    <div class="modalTitle">그룹 생성하기</div>
-                    <div class="modalCloseBtn">X</div>
+                    <span class="modalTitle">팀 생성하기</span>
+                    <span class="modalCloseBtn">X</span>
                 </div>
                 <div class="infoContainer">
                     <form class="groupForm">
-                        <div class="imageInputConatiner">
-                            <div class="image">
+                        <div class="formContainer">
+                            <div class="imageInputConatiner">
+                                <div class="image">
+                                </div>
+                                <div class="imageInput">
+                                    <label>사진 추가하기
+                                        <input type="file" name="image" onchange="loadFile(this);" accept=".jpg, .jpeg, .png">
+                                    </label>
+                                    <div class="limit_image">*최대 10MB까지 첨부 가능합니다.</div>
+                                </div>
                             </div>
-                            <div class="imageInput">
-                                <input type="file" name="image" onchange="loadFile(this);" accept=".jpg, .jpeg, .png" required>
+                            <div class="infoInputContainer">
+                                <div class="groupName">
+                                    <div class="limit_name">*최대 20자까지 입력 가능합니다.</div>
+                                    <label for="nameInput">팀 이름 </label>
+                                    <input type="text" name="nameInput" class="nameInput" required>
+                                </div>
+                                <div class="tripPeriod">
+                                    <label for="start_date">여행 기간 </label>
+                                    <input type="date" name="start_date" value=" " class="start_date" required> ~ 
+                                    <input type="date" name="end_date" value=" " required></tr>
+                                </div>
                             </div>
                         </div>
-                        <div class="infoInputContainer">
-                            <div class="groupName">
-                                <label for="nameInput">그룹 이름: </label>
-                                <input type="text" name="nameInput" required>
-                            </div>
-                            <div class="tripPeriod">
-                                <label for="start_date">여행 기간: </label>
-                                <input type="date" name="start_date" required> ~ 
-                                <input type="date" name="end_date" required>
-                            </div>
-                            <div class="btnContainer">
-                                <input type="submit" value="생성하기" class="add_group">
-                            </div>
+                        <div class="btnContainer">
+                            <input type="submit" value="생성하기" class="add_group">
                         </div>
                     </form>
                 </div>
@@ -61,7 +67,7 @@
     <div class="haveTeam">
         <div class="main">
             <h3 class="title">팀 목록</h3><br>
-            지금까지 내가 참여했던 팀들을 볼 수 있어요.
+            <div class="subTitle"> 지금까지 내가 참여했던 팀들을 볼 수 있어요.</div>
             <div class="groupContainer">
                 <ul class="groupListContainer">
                     <li class="makeBtn">
