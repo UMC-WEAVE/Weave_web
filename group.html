@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>팀</title> 
+    <link rel="stylesheet" href="css/map.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/group.css" />
+</head>
+<body>
+    <div class="topDiv">
+        <img class="logo" src="image/logo.png">
+    </div>
+    <div class="hrDiv"></div>
+
+    <!-- 팀이 없을때 -->
+    <div class="noTeam">
+      <div class="textDiv" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+        <div class="text_noTeam">팀이 없습니다.<br>팀에 참여하거나 만들어보세요!</div>
+        <div class="wrapper"><div class="makeGroup_noTeam"><b class="btnTitle">팀 생성</b><br><br>
+                            <span class="btnText">팀의 리더가 되어<br>팀을 직접 초대해요!</span></div></div>
+      </div>
+    </div>
+
+    <!-- 팀이 있을때 -->
+    <div class="haveTeam">
+        <div class="main">
+            <h3 class="title">팀 목록</h3><br>
+            <div class="subTitle"> 지금까지 내가 참여했던 팀들을 볼 수 있어요.</div>
+            <div class="container">
+              <div class="grid text-center">
+                  <input class="makeGroupBtn" type="button" value="+" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTeamModal">
+
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 영역 -->
+    <div class="modal fade" id="addTeamModal" tabindex="-1" aria-labelledby="addTeamModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="addTeamModalLabel">팀 생성하기</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="groupForm">
+              <div class="modal-body">
+                <div class="formContainer">
+                  <div class="imageInputConatiner">
+                      <div class="image">
+                      </div>
+                      <div class="imageInput">
+                        <label>사진 추가하기
+                          <input type="file" name="image" onchange="loadFile(this);" accept=".jpg, .jpeg, .png">
+                        </label>
+                        <div class="limit_image">*최대 10MB까지 첨부 가능합니다.</div>
+                      </div>
+                  </div>
+                  <div class="infoInputContainer container text-center">
+                    <div class="row row-cols-3">
+                        <div class="col-4"></div>
+                        <div class="limit_name col-6">*최대 20자까지 입력 가능합니다.</div>
+
+                        <div class="col-4 name-label"><label for="teamName" class="form-label">팀 이름</label></div>
+                        <div class="col-6"><input type="text" name="nameInput" class="form-control nameInput" id="teamName" required></div>
+
+                        <div class="col-4 period-label"><label for="period" class="form-label">여행 기간</label></div>
+                        <div class="col-5 date">
+                          <input type="text" id="date" name="date" class="form-control dateInput" value="" required/>
+                        </div>
+                        <div class="col-2"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="btnContainer">
+                  <button type="submit" class="btn btn-primary add_group">생성하기</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- 달력 관련 -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="test.js"></script>
+
+    <!-- js -->
+    <script src="js/group.js"></script>
+</body>
+</html>
+
