@@ -3,11 +3,11 @@ const $modal = document.querySelector('.modal');
 const $findAddress = document.querySelector('.findAddress');
 const $searchForm = document.querySelector('.searchForm');
 const $addressRslt = document.querySelector('.addressRslt');
-const $primaryBtn = document.querySelector('.btn-primary');
-const $result = document.querySelector('.result');
 
 /* modal */
 $findAddress.addEventListener('click', () => {
+    $modal.style.display = 'block';
+    console.log("show");
     showMapModal();
 })
 
@@ -21,27 +21,15 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         level: 3 // 지도의 확대 레벨
     };  
 
-$primaryBtn.addEventListener('click', () => {
-    $result.value = $addressRslt.value;
-    $addressRslt.value = "";
-    $('.modal').modal('hide');
-})
-
 function showMapModal() {
-
     // 지도를 생성합니다    
     var map = new kakao.maps.Map(mapContainer, mapOption); 
 
     // 장소 검색 객체를 생성합니다
     var ps = new kakao.maps.services.Places();  
-    
+
     // 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
     var infowindow = new kakao.maps.InfoWindow({zIndex:1});
-
-    //모달 로딩까지의 시간 고려
-    $("#mapModal").on("shown.bs.modal", function() {
-        map.relayout();
-    })
 
     $searchForm.addEventListener('submit', submitInput);
 
@@ -92,7 +80,7 @@ function showMapModal() {
                     document.getElementById('keyword').value = "";
 
                     $addressRslt.value = event.target.name;
-                    // $modal.style.display = 'none';
+                    $modal.style.display = 'none';
                 })
             }
 
