@@ -139,13 +139,23 @@
   <!-- 삭제모달 -->
   <div class="modal fade" id="deleteTeamModal" tabindex="-1" aria-labelledby="deleteTeamModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
+      
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteTeamModalLabel">삭제하기</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="teamInfo_del">
+          <div class="modal-title" id="deleteTeamModalLabel">팀 삭제</div>
+          <div id="comment_del"></div>
+          <ul>
+            <li id="title_del"></li>
+            <li id="date_del"></li>
+          </ul>
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="8"/>
+          </svg><div id="title_del"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
+            <circle cx="8" cy="8" r="8"/>
+          </svg><div id="date_del"></div> -->
         </div>
-        <div id="title_del"></div>
-        <div id="date_del"></div>
         <div class="btnContainer">
           <button class="btn btn-primary delete_group" data-bs-target="#deleteTeamModal2" data-bs-toggle="modal">삭제</button>
         </div>
@@ -157,14 +167,12 @@
   <div class="modal fade" id="deleteTeamModal2" tabindex="-1" aria-labelledby="deleteTeamModalLabel2" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="deleteTeamModalLabel2">삭제완료</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div id="title_del"></div>
-        <div id="date_del"></div>
-        <div class="btnContainer">
-          <button class="btn btn-primary" data-bs-dismiss="modal">확인</button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div id="contents_del2">
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+          </svg>
+          <div id="comment_del2"></div> -->
         </div>
       </div>
     </div>

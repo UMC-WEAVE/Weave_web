@@ -16,6 +16,8 @@ const groups = [
     // },
 ]
 
+var tempIdx = 233;
+
 const $makeGroupBtn = document.querySelector(".makeGroupBtn");
 const $add_btn = document.querySelector(".add_group");
 const $edit_btn = document.querySelector(".edit_group");
@@ -33,6 +35,7 @@ const $editTeamModal = document.getElementById('editTeamModal');
 const today = new Date();
 
 var newImage;
+var title_del2;
 
 let cardArray = [];
 
@@ -158,12 +161,15 @@ function addGroup(event) {
     var start_date = dateList[0].getFullYear() + "-" + (dateList[0].getMonth() + 1) + "-" + dateList[0].getDate();
     var end_date = dateList[1].getFullYear() + "-" + (dateList[1].getMonth() + 1) + "-" + dateList[1].getDate();
 
-    groups.push({ "id" : cardArray.length,
+    groups.push({ "id" : tempIdx,
     "title": name, 
     "start_date": start_date,
     "end_date": end_date,
     "thumbnail" : thumbnail
     });
+
+    //지워질부분
+    tempIdx = tempIdx + 2;
 
     $("input[name=nameInput]").val(" ");
     // $("input[name=date]").val(" ");
@@ -179,7 +185,7 @@ function addGroup(event) {
 //수정하기
 function editGroup(event) {
     event.preventDefault();
-    console.log(event.target.name);
+    console.log("아아아ㅏ아아아ㅏ" + event.target.name);
 
     // var form = event.target;
     var name = $(event.target).find("input[name=nameInput]").val();
@@ -205,10 +211,14 @@ function editGroup(event) {
     var end_date = dateList[1].getFullYear() + "-" + (dateList[1].getMonth() + 1) + "-" + dateList[1].getDate();
 
     //데이터에 반영
-    groups[event.target.name].title = name;
-    groups[event.target.name].start_date = start_date;
-    groups[event.target.name].end_date = end_date;
-    groups[event.target.name].thumbnail = thumbnail;
+    for (var i = 0; i < cardArray.length; i++) {
+        if (cardArray[i].id == event.target.name) {
+            groups[i].title = name;
+            groups[i].start_date = start_date;
+            groups[i].end_date = end_date;
+            groups[i].thumbnail = thumbnail;
+        }
+    }
 
     $("input[name=nameInput]").val(" ");
     // $("input[name=date]").val(" ");
@@ -223,10 +233,16 @@ function editGroup(event) {
 
 //그룹 삭제
 function deleteGroup(event) {
-    console.log(event.target.name);
-    groups.splice(event.target.name, 1);
-    console.log(groups);
-    console.log(cardArray);
+    // console.log(event.target.name);
+    var cardidx;
+    for (var i = 0; i < cardArray.length; i++) {
+        if (cardArray[i].id == event.target.name) {
+            title_del2 = cardArray[i].title;
+            console.log(typeof(title_del2));
+            groups.splice(i, 1);
+            break;
+        }
+    }
 
     displayGroupData();
 }
@@ -236,7 +252,14 @@ $('#editTeamModal').on('show.bs.modal', function (event) {
     var index = $(event.relatedTarget).data('index');
     // console.log(index);
 
-    var cardData = cardArray[index];
+    var cardData;
+    for (var i = 0; i < cardArray.length; i++) {
+        if (cardArray[i].id == index) {
+            cardData = cardArray[i];
+            break;
+        }
+    }
+
     // console.log(cardData);
 
     //썸네일
@@ -289,14 +312,36 @@ $('#deleteTeamModal').on('show.bs.modal', function (event) {
     var index = $(event.relatedTarget).data('index');
     console.log(index);
 
-    var cardData = cardArray[index];
+    var cardData;
+    for (var i = 0; i < cardArray.length; i++) {
+        if (cardArray[i].id == index) {
+            cardData = cardArray[i];
+            break;
+        }
+    }
 
     var modal = $(this);
-    modal.find('#title_del').text(cardData.title);
-    modal.find('#date_del').text(cardData.start_date + " ~ " + cardData.end_date);
+    var comment = cardData.title + ' 팀을 삭제하시겠습니까?<br>삭제 후에는 동작을 되돌릴 수 없습니다.';
+    document.getElementById("comment_del").innerHTML = comment;
+    modal.find('#title_del').text(cardData.title + " 팀");
+    modal.find('#date_del').text("여행 기간 : " + cardData.start_date + " ~ " + cardData.end_date);
 
     //버튼에 인덱스 저장
     modal.find('.delete_group').attr('name', index);
+});
+
+//삭제모달2에 정보띄우기
+$('#deleteTeamModal2').on('show.bs.modal', function (event) {
+    //모달 딜레이 때문에 비동기처리
+    setTimeout(function() {
+        var contents = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+          </svg>
+          <div id="comment_del2">${`${title_del2}`} 팀이<br>삭제되었습니다</div>`;
+        
+        console.log(contents);
+        document.getElementById("contents_del2").innerHTML = contents;
+    }, 100); 
 });
 
 // 달력
