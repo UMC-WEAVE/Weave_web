@@ -149,6 +149,37 @@ html, body {
     margin: 0px;
     padding: 0px;
     width: 100%;
+    object-fit: cover;
+}
+
+.bi-pencil {
+    position: absolute;
+    top:20px;
+    right: 15px;
+
+    width: 30px;
+    height: 30px;
+
+    z-index: 3;
+
+    display: none;
+    cursor: pointer;
+    fill: #CDCDCD;
+}
+
+.bi-trash {
+    position: absolute;
+    top:70px;
+    right: 15px;
+    
+    width: 30px;
+    height: 30px;
+
+    z-index: 3;
+
+    display: none;
+    cursor: pointer;
+    fill: #CDCDCD;
 }
 
 .card-body {
@@ -195,6 +226,37 @@ html, body {
 }
 
 /* 모달 영역 */
+/* .modal-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+} */
+
+.modal {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) { 
+    .modal:before {
+            display: inline-block;
+            vertical-align: middle;
+            content: " ";
+            height: 100%;
+    }
+}
+
+.modal-dialog {
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* .centered {
+    left: 0%;
+    transform: translateX(-50%);
+} */
+
 .modal-content {
     height: 610px;
     width: 60rem;
