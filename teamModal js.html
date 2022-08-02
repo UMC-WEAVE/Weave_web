@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<button type="button" onclick="showUsr()">
+  팀
+</button>
+<p id="demo"></p>
+<p id="alert"></p>
+<input type="text" name="enter" class="enter" value="" id="userInvite"/>
+<input type="button" value="click" OnClick="chkUser()"/>
+
+
+<script>
+
+let trip1Members = '{"trip1Member":[' +
+'{"name": "이연후","email": "trip1Member1@gmail.com", "team": 101},' +
+'{"name": "이은서","email": "trip1Member2@gmail.com", "team": 101 },' +
+'{"name": "전유영","email": "trip1Member3@gmail.com", "team": 101 },' +
+'{"name": "현우","email": "trip1Member4@gmail.com", "team": 101 },' +
+'{"name": "낑깡","email": "trip1Member5@gmail.com", "team": 101 },' +
+'{"name": "부엉","email": "trip1Member6@gmail.com", "team": 101 }]}'; 
+let weaveUsers = '{"chkUser":[' +
+'{"name":"위브 유저","email":"이메일" },' +
+'{"name":"user1","email":"weaveuser1@gmail.com", "team": 100 },' +
+'{"name":"user2","email":"weaveuser2@gmail.com", "team": 100 },' +
+'{"name":"user3","email":"weaveuser3@gmail.com", "team": 100 },' +
+'{"name":"user4","email":"weaveuser4@gmail.com", "team": 100 },' +
+'{"name":"user5","email":"weaveuser5@gmail.com", "team": 100 },' +
+'{"name":"user6","email":"weaveuser6@gmail.com", "team": 100 }]}'; 
+let nonUsers = '{"invalid": [' +
+'{"message": "위브에 가입된 유저가 아닙니다."}]}'; 
+
+const memberList = JSON.parse(trip1Members);
+const userList = JSON.parse(weaveUsers);
+
+function showUsr() {
+  for(j = 0; j < 6; j++) {
+    document.getElementById("demo").innerHTML += memberList.trip1Member[j].name + "<br>";
+  }
+}
+
+var chkValid = document.getElementById('userInvite');
+function chkUser() {
+  let flag = 0;
+  let i = 0;
+  for(i = 1; i <= 6; i++) {
+    if (chkValid.value == userList.chkUser[i].email) {
+      flag = 1;
+      break;
+    }
+  }
+
+  if (flag == 1)
+    document.getElementById("demo").innerHTML += userList.chkUser[i].name + "<br>";
+  else
+    document.getElementById("alert").innerHTML += chkValid.value + " " + userList.chkUser[0].email + "의 사용자는 "+ userList.chkUser[0].name + "가 아닙니다." + "<br>";
+}
+</script>
+
+</body>
+</html>
