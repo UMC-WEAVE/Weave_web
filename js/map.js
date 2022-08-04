@@ -4,6 +4,10 @@
 //  * 4. 카테고리 드롭다운 메뉴 V
 //  * 5. 메뉴 선택시 그 메뉴에 해당하는 걸로 마커 뜨도록 V
 
+//초기 화면은 모든 마커가 잡히도록
+//일정 클릭시 일정 기준으로 maplevel 재설정
+//일자에서 추천여행지
+
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표    서버에서 받아오는 초기 위치(위도, 경도)
@@ -16,40 +20,16 @@ var ps = new kakao.maps.services.Places(map);
 
 var plan = [
     {
-        object : [{title: '카카오', latlng: new kakao.maps.LatLng(33.450705, 126.570677)},
-             {title: '생태연못', latlng: new kakao.maps.LatLng(33.450936, 126.569477)}]    
+        object : [{title: '카카오', latlng: new kakao.maps.LatLng(33.450705, 126.570677), date: 1},
+             {title: '생태연못', latlng: new kakao.maps.LatLng(33.450936, 126.569477), date: 1}]    
     },
     {
-        object : [{title: '텃밭', latlng: new kakao.maps.LatLng(33.450879, 126.569940)},
-             {title: '근린공원', latlng: new kakao.maps.LatLng(33.451393, 126.570738)}]    
+        object : [{title: '제주대학교', latlng: new kakao.maps.LatLng(33.45589760291785, 126.56190166606697), date: 2},
+             {title: '언어교육원', latlng: new kakao.maps.LatLng(33.4540778581201, 126.560284532559), date: 2}]    
     }
 ];
 
-// var day1 = [
-//     {
-//         idx : 1,
-//         title: '카카오', 
-//         latlng: new kakao.maps.LatLng(33.450705, 126.570677)
-//     },
-//     {
-//         idx : 1,
-//         title: '생태연못', 
-//         latlng: new kakao.maps.LatLng(33.450936, 126.569477)
-//     }
-// ];
-
-// var day2 = [
-//     {
-//         idx : 2,
-//         title: '텃밭', 
-//         latlng: new kakao.maps.LatLng(33.450879, 126.569940)
-//     },
-//     {
-//         idx : 2,
-//         title: '근린공원',
-//         latlng: new kakao.maps.LatLng(33.451393, 126.570738)
-//     }
-// ];
+var mappingData = {};
 
 var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
 
@@ -63,6 +43,9 @@ const $category = document.querySelector('category');
 var linePath = [];
 var markers = [];
 var overlays = [];
+
+//마커를 다 보이게 할 바운드 객체
+var bounds = new kakao.maps.LatLngBounds(); 
 
 for (var i = 0; i < plan.length; i ++) {
     for (var j = 0; j < plan[i].object.length; j++) {
@@ -80,9 +63,21 @@ for (var i = 0; i < plan.length; i ++) {
             image : markerImage // 마커 이미지 
         });
 
+        // datePlan[i][j] = {marker, plan[i].object[j].latlng};
+        // console.log(datePlan[i][j] + "i = " + i + ", j = " + j);
+
         linePath[j] = plan[i].object[j].latlng;//좌표배열에 저장
 
-            
+        bounds.extend(plan[i].object[j].latlng);    
+
+        // mappingData[plan[i].object[j].date] = {marker, plan[i].object[j].title};
+
+        // console.log("title : " + marker.title);
+        // 마커에 click 이벤트를 등록합니다 -> 클릭시 일정기준으로 Bounds세팅
+        // kakao.maps.event.addListener(marker, 'click', markerlick(mouseEvent));
+
+        
+
         // 커스텀 오버레이에 표시할 내용입니다     
         // HTML 문자열 또는 Dom Element 입니다 
         var content = `<div class ="customoverlay"><span class="left"></span><span class="center">${plan[i].object[j].title}</span><span class="right"></span></div>`;
@@ -114,7 +109,17 @@ for (var i = 0; i < plan.length; i ++) {
     linePath = [];
 }
 
+// function markerClick{
+//     console.log("marker click");
+//     console.log(marker);
+//     console.log(marker.Gb);
+//     // var latlng = mouseEvent.latLng; 
+//     // console.log(latlng);
+// });
+
 console.log(plan);
+//초기 범위세팅
+map.setBounds(bounds,100,200,100,200);
 
 // var location = [//더미데이터  //데이터 형식 아직 모름
 //     {
@@ -135,17 +140,17 @@ console.log(plan);
 
 const categoryBtn = document.querySelector('.categoryBtn');
 const category = document.querySelector('.category');
-const lists = document.querySelectorAll('.list');
+const lists = document.querySelectorAll('.dropdown-item');
 
-categoryBtn.addEventListener('click', () => {
-    console.log("드롭다운 메뉴");
-    console.log("display: " + category.style.display);
-    if (category.style.display == 'none' || category.style.display == '') {
-        category.style.display = 'block';
-    } else {
-        category.style.display = 'none';
-    }
-});
+// categoryBtn.addEventListener('click', () => {
+//     console.log("드롭다운 메뉴");
+//     console.log("display: " + category.style.display);
+//     if (category.style.display == 'none' || category.style.display == '') {
+//         category.style.display = 'block';
+//     } else {
+//         category.style.display = 'none';
+//     }
+// });
 
 for (var i = 0; i < lists.length; i++)
     lists[i].addEventListener('click', listClick);

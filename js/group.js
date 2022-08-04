@@ -155,7 +155,7 @@ function addGroup(event) {
     }
 
     var dateList = stringToDate(date);
-    console.log(dateList);
+    console.log(typeof(dateList[0]));
 
     //날짜 포맷 설정(화면에 띄워지는 요소)
     var start_date = dateList[0].getFullYear() + "-" + (dateList[0].getMonth() + 1) + "-" + dateList[0].getDate();

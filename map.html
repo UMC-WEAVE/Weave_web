@@ -3,30 +3,128 @@
 <head>
     <meta charset="utf-8">
     <title>지도</title> 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
     <link rel="stylesheet" href="css/map.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="topDiv">
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                    <img class="weave-logo" src="image\weave.PNG" width="100" alt="Weave Logo">
+                </a>
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="archive.html" class="nav-link px-10 link-secondary"><strong>아카이브</strong></a></li>
+                    <li><a href="#" class="nav-link px-10 link-dark"><strong>여행일정</strong></a></li>
+                    <li><a href="map.html" class="nav-link px-10 link-secondary"><strong>지도</strong></a></li>
+                </ul>
+
+                <div class="col-md-3 text-end">
+                    <ul class="nav col-12 row-lg-auto my-10 justify-content-center my-md-10 text-small">
+                        <li>
+                            <a href="#" class="nav-link px-10 link-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    <path fill-rule="evenodd"
+                                        d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                                </svg>
+                                팀
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-10 link-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-person-circle" viewBox="0 0 16 16">
+                                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                    <path fill-rule="evenodd"
+                                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                </svg>
+                                마이페이지
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-10 link-dark">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-lock" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                                </svg>
+                                로그인
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container2">
+        <!-- <div class="container text-center">
+            <div class="row row-cols-2">
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+              <div class="col">Column</div>
+            </div>
+          </div> -->
+        <div class="row row-cols-2">
+          <div class="col-3"></div>
+          <div class="col-7">
             <div class="textDiv">
                 <b class="title">지도로 보는 여행</b><br><br>
                 지도에 여행 일정이 표시되어 있어 한 눈에 거리와 동선을 파악할 수 있어요.
             </div>
-            <div class="categoryContainer">
-                <div class="categoryBtn">카테고리 선택</div>
-                <ul class="category">
-                    <li class="list">카페</li>
-                    <li class="list">음식점</li>
-                    <li class="list">숙박</li>
-                    <li class="list">관광명소</li>
-                    <li class="list">문화시설</li>
-                    <li class="list">편의점</li>
+          </div>
+          <div class="col-3 dropdownContainer">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    카테고리를 선택하세요
+                </button>
+              
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item">카페</a></li>
+                  <li><a class="dropdown-item">음식점</a></li>
+                  <li><a class="dropdown-item">숙박</a></li>
+                  <li><a class="dropdown-item">관광명소</a></li>
+                  <li><a class="dropdown-item">문화시설</a></li>
+                  <li><a class="dropdown-item">편의점</a></li>
                 </ul>
             </div>
+          </div>
+          <div class="col-7"><div id="map"></div></div>
+      </div>
+    <!-- <div class="container">
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              카테고리를 선택하세요
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        <div class="contentContainer">
+            <div class="textDiv">
+                <b class="title">지도로 보는 여행</b><br><br>
+                지도에 여행 일정이 표시되어 있어 한 눈에 거리와 동선을 파악할 수 있어요.
+            </div>
+             지도를 표시할 div 입니다 -->
+            <!-- <div id="map"></div>
         </div>
-        <!-- 지도를 표시할 div 입니다 -->
-        <div id="map"></div>
-    </div>
+    </div>  -->
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ccaf9cd422b6cbe03f3ba3775e12f987&libraries=services"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ccaf9cd422b6cbe03f3ba3775e12f987"></script>
     <script src="js/map.js"></script>

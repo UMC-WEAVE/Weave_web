@@ -21,10 +21,21 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
         level: 3 // 지도의 확대 레벨
     };  
 
+var geocoder = new kakao.maps.services.Geocoder();
+
 $primaryBtn.addEventListener('click', () => {
-    $result.value = $addressRslt.value;
-    $addressRslt.value = "";
-    $('.modal').modal('hide');
+    geocoder.addressSearch($addressRslt.value, function(result, status) {
+         if (status === kakao.maps.services.Status.OK) {
+            $('.findAddress').attr('name', result[0].y + "," +result[0].x);
+            console.log("ok");
+
+            $result.value = $addressRslt.value;
+            $addressRslt.value = "";
+            
+            $('.modal').modal('hide');
+            console.log($('.findAddress').attr('name'));
+        } 
+    }); 
 })
 
 function showMapModal() {
