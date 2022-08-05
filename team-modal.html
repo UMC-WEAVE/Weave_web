@@ -28,14 +28,17 @@
             <td class="teamMemTitle">팀원 조회</td>
             <td rowspan="10">
               <div id="teamMemList">
-                <p id="demo"></p>
-                <ul>
+                <ul id="demo">
                   <li>이연후</li>
                   <li>이은서</li>
                   <li>전유영</li>
                   <li>현우</li>
                   <li>낑깡</li>
                   <li>부엉</li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
+                  <li></li>
                 </ul>
               </div>
             </td>
@@ -60,7 +63,7 @@
           </tr>
           <tr>
             <td colspan="3">
-              <p id="alert"></p>
+              <div id="liveAlertPlaceholder"></div>
             </td>
           </tr>
           <tr>
@@ -93,6 +96,19 @@ crossorigin="anonymous"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> 
 <script>
+  const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+const alert = (message, type) => {
+  const wrapper = document.createElement('div')
+  wrapper.innerHTML = [
+    `<div class="alert alert-danger alert-dismissible" role="alert">`,
+    `   <div>${message}</div>`,
+    '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+    '</div>'
+  ].join('')
+    
+  alertPlaceholder.append(wrapper)
+}
   let trip1Members = '{"trip1Member":[' +
   '{"name": "이연후","email": "trip1Member1@gmail.com", "team": 101},' +
   '{"name": "이은서","email": "trip1Member2@gmail.com", "team": 101 },' +
@@ -113,10 +129,10 @@ crossorigin="anonymous"></script>
   
   const memberList = JSON.parse(trip1Members);
   const userList = JSON.parse(weaveUsers);
-  
+  let memberSum = 6;
   function showUsr() {
-    for(j = 0; j < 6; j++) {
-      document.getElementById("demo").innerHTML += memberList.trip1Member[j].name + "<br>";
+    for(j = 0; j < memberSum; j++) {
+      document.getElementById("demo").innerHTML += "<li>" + memberList.trip1Member[j].name + "</li>";
     }
   }
   
@@ -130,11 +146,19 @@ crossorigin="anonymous"></script>
         break;
       }
     }
-  
-    if (flag == 1)
-      document.getElementById("demo").innerHTML += userList.chkUser[i].name + "<br>";
-    else
-      document.getElementById("alert").innerHTML += chkValid.value + " " + userList.chkUser[0].email + "의 사용자는 "+ userList.chkUser[0].name + "가 아닙니다." + "<br>";
+  let inviteMemSum = 0;
+  if (flag == 1) {
+    document.getElementById("modal-content").innerHTML = "<li>" + adff + "</li>";
+    inviteMemSum += 1;
+  }
+  else
+    alert('위브에 가입된 유저가 아닙니다.', 'success');
+      
+
+  if (memberSum + inviteMemSum == 10) {
+      document.getElementById("teamMemInvite").innerHTML += "<input class='form-control' type='text' placeholder='더 이상 초대할 수 없어요' aria-label='Disabled input example' disabled>";
+  } 
+
   }
   </script>
 </html>
