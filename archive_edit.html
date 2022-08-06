@@ -62,32 +62,6 @@
     </div>
   </header>
 
-  <!-- 팀이 없을때
-  <div class="noTeam">
-    <div class="textDiv">
-      <div class="text_noTeam">팀이 없습니다.<br>팀에 참여하거나 만들어보세요!</div>
-      <div class="wrapper">
-        <div class="makeGroup_noTeam" data-bs-toggle="modal" data-bs-target="#addArchiveModal">
-          <b class="btnTitle">팀 생성</b><br><br>
-          <span class="btnText">팀의 리더가 되어<br>팀을 직접 초대해요!</span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  팀이 있을때
-  <div class="haveTeam">
-    <div class="main">
-      <div class="container">
-        <div class="grid text-center">
-          <input class="makeGroupBtn" type="button" value="+" class="btn btn-primary" data-bs-toggle="modal"
-            data-bs-target="#addArchiveModal">
-
-        </div>
-      </div>
-    </div>
-  </div> -->
-
   <!-- 메인 -->
   <!-- 아카이브 -->
   <main>
@@ -126,7 +100,7 @@
       </div>
     </div>
     </div>
-
+`
     <!-- 음식점 -->
     <div class="container px-5 py-3" id="featured-3">
       <!-- 앨범 그리드 -->
@@ -294,17 +268,9 @@
                 </div>
               </div>
               <div class="infoInputContainer container text-center">
-                <!-- 장소 -->
-                <div class="row mb-3">
-                  <label for="inputPlace" class="col-sm-2 col-form-label col-form-label-sm">장소</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control form-control-sm" name="place" id="inputPlace" required
-                      placeholder="어디로 가는지 입력해주세요.">
-                  </div>
-                </div>
                 <!-- 제목 -->
                 <div class="row mb-3">
-                  <label for="title" class="col-sm-2 col-form-label col-form-label-sm">제목</label>
+                  <label for="inputTitle" class="col-sm-2 col-form-label col-form-label-sm">제목</label>
                   <div class="col-sm-8">
                     <input type="title" class="form-control form-control-sm" name="title" id="inputTitle" required
                       placeholder="여행 일정의 제목을 입력해주세요.">
@@ -320,16 +286,16 @@
                 </div>
                 <!-- 메모 -->
                 <div class="row mb-3">
-                  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">메모</label>
+                  <label for="inputContent" class="col-sm-2 col-form-label col-form-label-sm">메모</label>
                   <div class="col-sm-8">
-                    <textarea class="form-control" name="memo" id="inputMemo" rows="3">
+                    <textarea class="form-control" name="content" id="inputContent" rows="3">
                       </textarea>
                   </div>
                 </div>
               </div>
             </div>
             <div class="btnContainer">
-              <button type="submit" class="btn btn-primary add_group">생성하기</button>
+              <button type="submit" class="btn btn-primary add_group">확인</button>
             </div>
           </div>
         </form>
@@ -343,7 +309,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editArchiveModalLabel">장소 아카이빙</h5>
+          <h5 class="modal-title" id="editArchiveModalLabel">장소 아카이브</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <form action="#" class="groupForm_edit">
@@ -363,9 +329,9 @@
               <div class="infoInputContainer container text-center">
                 <!-- 카테고리 -->
                 <div class="row mb-3">
-                  <label for="category" class="col-sm-2 col-form-label col-form-label-sm">카테고리</label>
+                  <label for="inputCategory" class="col-sm-2 col-form-label col-form-label-sm">카테고리</label>
                   <div class="col-sm-8">
-                    <select class="form-control form-control-sm" name="category" id="category" required>
+                    <select class="form-control form-control-sm" name="category" id="inputCategory" required>
                       <option value="1" selected>카페</option>
                       <option value="2" selected>음식점</option>
                       <option value="3" selected>숙박</option>
@@ -373,36 +339,37 @@
                       <option value="5" selected>문화시설</option>
                     </select>
                   </div>
-                  <!-- 제목 -->
-                  <div class="row mb-3">
-                    <label for="title" class="col-sm-2 col-form-label col-form-label-sm">제목</label>
-                    <div class="col-sm-8">
-                      <input type="title" class="form-control form-control-sm" name="title" id="inputTitle" required
-                        placeholder="여행 일정의 제목을 입력해주세요.">
-                    </div>
+                </div>
+                <!-- 제목 -->
+                <div class="row mb-3">
+                  <label for="title" class="col-sm-2 col-form-label col-form-label-sm">일정 제목</label>
+                  <div class="col-sm-8">
+                    <input type="title" class="form-control form-control-sm" name="title" id="inputTitle" required
+                      placeholder="여행 일정의 제목을 입력해주세요.">
                   </div>
-                  <!-- 링크 -->
-                  <div class="row mb-3">
-                    <label for="inputUrl" class="col-sm-2 col-form-label col-form-label-sm">링크</label>
-                    <div class="col-sm-8">
-                      <input type="url" class="form-control form-control-sm" name="url" id="inputUrl" required
-                        placeholder="관련 링크를 첨부해주세요.">
-                    </div>
+                </div>
+                <!-- 링크 -->
+                <div class="row mb-3">
+                  <label for="inputUrl" class="col-sm-2 col-form-label col-form-label-sm">링크</label>
+                  <div class="col-sm-8">
+                    <input type="url" class="form-control form-control-sm" name="url" id="inputUrl" required
+                      placeholder="관련 링크를 첨부해주세요.">
                   </div>
-                  <!-- 메모 -->
-                  <div class="row mb-3">
-                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">메모</label>
-                    <div class="col-sm-8">
-                      <textarea class="form-control" name="memo" id="inputMemo" rows="3">
+                </div>
+                <!-- 메모 -->
+                <div class="row mb-3">
+                  <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">메모</label>
+                  <div class="col-sm-8">
+                    <textarea class="form-control" name="content" id="inputContent" rows="3">
                       </textarea>
-                    </div>
                   </div>
                 </div>
               </div>
-              <div class="btnContainer">
-                <button type="submit" class="btn btn-primary add_group">생성하기</button>
-              </div>
             </div>
+            <div class="btnContainer">
+              <button type="submit" class="btn btn-primary add_group">생성하기</button>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -424,7 +391,7 @@
   <script src="test.js"></script>
 
   <!-- js -->
-  <script src="js/archive.js"></script>
+  <script src="js/archive_mod.js"></script>
 
 </body>
 
