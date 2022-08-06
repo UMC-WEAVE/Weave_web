@@ -2,18 +2,116 @@
 const groups = [
     // {
     //     id: 1,
-    //     "name": "제주 여행팀",
+    //     "title": "제주 여행팀1",
     //     "start_date": "2022-09-01",
     //     "end_date" : "2022-09-05",
     //     "thumbnail" : "image/thumbnail_1.jpeg"
     // },
     // {
     //     id: 2,
-    //     "name": "부산 가요",
+    //     "title": "부산 가요2",
     //     "start_date": "2022-07-01",
     //     "end_date" : "2022-07-03",
     //     "thumbnail" : "image/thumbnail_1.jpeg"
     // },
+    // {
+    //     id: 3,
+    //     "title": "제주 여행팀3",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 4,
+    //     "title": "부산 가요4",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 5,
+    //     "title": "제주 여행팀5",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 6,
+    //     "title": "부산 가요6",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 7,
+    //     "title": "제주 여행팀7",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 8,
+    //     "title": "부산 가요8",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 9,
+    //     "title": "제주 여행팀9",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 10,
+    //     "title": "부산 가요10",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 11,
+    //     "title": "제주 여행팀11",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 12,
+    //     "title": "부산 가요12",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 13,
+    //     "title": "제주 여행팀13",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 14,
+    //     "title": "부산 가요14",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 15,
+    //     "title": "제주 여행팀15",
+    //     "start_date": "2022-09-01",
+    //     "end_date" : "2022-09-05",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // },
+    // {
+    //     id: 16,
+    //     "title": "부산 가요16",
+    //     "start_date": "2022-07-01",
+    //     "end_date" : "2022-07-03",
+    //     "thumbnail" : "image/thumbnail_1.jpeg"
+    // }
 ]
 
 var tempIdx = 233;
@@ -43,6 +141,7 @@ $groupForm.addEventListener('submit', addGroup);
 $groupForm_edit.addEventListener('submit', editGroup);
 $delete_btn.addEventListener('click', deleteGroup);
 
+//card쪽에 id를 넣어서 hover시 해당 아이디의 svg만 뜨도록
 const groupItemTemplate = (newData) => {
     return `<div class="card" style="width: 18rem;">
                     <img src="${`${newData.thumbnail}`}" class="card-img-top" alt="...">
@@ -81,10 +180,13 @@ function displayGroupData() {
         })
         
         //오류 고치던 중이었다. 수정 삭제버튼 어느 카드에 올려도 다뜬다
-        $('.card').mouseout(function() {
+        $('.card').mouseout(function(event) {
+            // console.log($(event.target).parents());
+            // $(event.target).parents().find( '.bi-pencil' ).css('display', 'none');
             $( '.bi-pencil' ).css('display', 'none');
         });
-        $('.card').mouseover(function() {
+        $('.card').mouseover(function(event) {
+            // $(event.target).parents().find( '.bi-pencil' ).css('display', 'block');
             $( '.bi-pencil' ).css('display', 'block');
         });
     
@@ -99,12 +201,36 @@ function displayGroupData() {
 
 displayGroupData();
 
+        //오류 고치던 중이었다. 수정 삭제버튼 어느 카드에 올려도 다뜬다
+        // $('.card').mouseout(function(event) {
+        //     console.log(event.target);
+        //     $(event.target).find( '.bi-pencil' ).css('display', 'none');
+        // });
+        // $('.card').mouseover(function(event) {
+        //     $(event.target).find( '.bi-pencil' ).css('display', 'block');
+        //     // $( '.bi-pencil' ).css('display', 'block');
+        // });
+    
+        // $('.card').mouseout(function() {
+        //     $( '.bi-trash' ).css('display', 'none');
+        // });
+        // $('.card').mouseover(function() {
+        //     $( '.bi-trash' ).css('display', 'block');
+        // });
+
 function stringToDate(date) {
     var dateString = date.split('~');
     var dateList = [];
 
     dateList.push(new Date(dateString[0]));
     dateList.push(new Date(dateString[1]));
+    console.log(dateList[0] + ", " + dateList[1]);
+
+    // console.log(typeof(dateList[0]));
+
+    // dateList[0].toISOString().substring(0,10);
+    // console.log("date is " + dateList[0].toISOString().substring(0,10));
+    // console.log("type is " + typeof(dateList[0].toISOString().substring(0,10)));
 
     return dateList;
 }
@@ -112,6 +238,7 @@ function stringToDate(date) {
 //사진 로드
 function loadFile(input) {
     var file = input.files[0];	//선택된 파일 가져오기
+    console.log("input: " + input.files[0]);
 
     if (newImage == undefined) {
         //새로운 이미지 div 추가
