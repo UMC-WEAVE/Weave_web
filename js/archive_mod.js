@@ -1,5 +1,5 @@
 //더미데이터
-const groups = [
+const archives = [
   // {
   //   archiveIdx: 2,
   //   category: {
@@ -77,21 +77,25 @@ const groups = [
   // },
 ];
 
-var archiveIdx = 7;
+var tempIdx = 7;
 
 const $makeGroupBtn = document.querySelector(".makeGroupBtn");
-const $add_btn = document.querySelector(".add_group");
-const $edit_btn = document.querySelector(".edit_group");
-const $delete_btn = document.querySelector(".delete_group");
-const $groupForm = document.querySelector(".groupForm");
-const $groupForm_edit = document.querySelector("#groupForm_edit");
+const $makeArchiveBtn = document.querySelector(".makeArchiveBtn");
+
+const $add_btn = document.querySelector(".add_archive");
+const $edit_btn = document.querySelector(".edit_archive");
+// const $delete_btn = document.querySelector(".delete_archive");
+// const $add_scbtn = document.querySelector(".add_schedule");
+
+const $archiveForm = document.querySelector(".archiveForm");
+// const $scheduleForm = document.querySelector(".scheduleForm");
+
+const $archiveForm_edit = document.querySelector("#archiveForm_edit");
 const $makeGroupButton = document.querySelector(".makeGroupBtn");
 const $groupList = document.querySelector(".groupList");
 
-const $noTeam = document.querySelector(".noTeam");
-const $haveTeam = document.querySelector(".haveTeam");
-
 const $editArchiveModal = document.getElementById("editArchiveModal");
+// const $addScheduleModal = document.getElementById("addScheduleModal");
 
 const today = new Date();
 
@@ -102,7 +106,7 @@ var newUrl;
 
 let cardArray = [];
 
-const groupItemTemplate = (newData) => {
+const archiveItemTemplate = (newData) => {
   return `<div class="card" style="width: 18rem;" data-bs-toggle="modal" data-bs-target="#editArchiveModal">
                     <div class="card-body">
                     <h5 class="card-title">${newData.title}</h5>
@@ -113,14 +117,15 @@ const groupItemTemplate = (newData) => {
   console.log("ok");
 };
 
-$groupForm.addEventListener("submit", addGroup);
-$groupForm_edit.addEventListener("submit", editGroup);
-// $delete_btn.addEventListener('click', deleteGroup);
+$archiveForm.addEventListener("submit", addArchive);
+$archiveForm_edit.addEventListener("submit", editArchive);
+// $scheduleForm.addEventListener("submit", addschedule);
+// $delete_btn.addEventListener('click', deleteArchive);
 
 //group 카드뷰
 function displayGroupData() {
   console.log("display");
-  // if (groups.length == 0) {
+  // if (archives.length == 0) {
   //     $haveTeam.style.display = 'none';
   //     $noTeam.style.display = 'block';
   // } else {
@@ -131,22 +136,22 @@ function displayGroupData() {
   // $( '.card' ).remove();
   // cardArray = []; //수정을 위한 cardView data 정리
 
-  console.log("display in groups : " + groups[0].title);
-  groups.map((item) => {
+  console.log("display in archives : " + archives[0].title);
+  archives.map((item) => {
     console.log(item);
-    const groupItem = groupItemTemplate(item);
+    const groupItem = archiveItemTemplate(item);
     cardArray.push(item); //cardArray 업데이트
     // console.log(cardArray + "ddd");
     $makeGroupButton.insertAdjacentHTML("afterend", groupItem);
   });
 
-  //     //오류 고치던 중이었다. 수정 삭제버튼 어느 카드에 올려도 다뜬다
-  //     $('.card').mouseout(function() {
-  //         $( '.bi-pencil' ).css('display', 'none');
-  //     });
-  //     $('.card').mouseover(function() {
-  //         $( '.bi-pencil' ).css('display', 'block');
-  //     });
+  //오류 고치던 중이었다. 수정 삭제버튼 어느 카드에 올려도 다뜬다
+  $('.card').mouseout(function () {
+    $('.bi-pin-fill').css('display', 'none');
+  });
+  $('.card').mouseover(function () {
+    $('.bi-pin-fill').css('display', 'block');
+  });
 
   //     $('.card').mouseout(function() {
   //         $( '.bi-trash' ).css('display', 'none');
@@ -196,14 +201,14 @@ function loadFile(input) {
   }
 }
 
-//그룹 추가하기
-function addGroup(event) {
+//아카이브 추가하기
+function addArchive(event) {
   event.preventDefault();
 
   var thumbnail = $(".preview").attr("src");
   var title = $("input[name=title]").val();
-  var url = $("input[name=url]").val();
   var content = $("textarea[name=content]").val();
+  var url = $("input[name=url]").val();
 
   console.log(thumbnail + "," + title + "," + url + "," + content);
 
@@ -219,47 +224,58 @@ function addGroup(event) {
   // if (thumbnail == undefined) {
   //     alert('사진을 추가해주세요.');
   //     return;
-  // }
-
-  groups.push({
-    thumbnail: thumbnail,
-    title: title,
-    url: url,
-    content: content,
-  });
-
-  console.log(groups);
-
-  // //모달 수동 닫기
-  $(".modal").modal("hide");
-
-  displayGroupData();
 }
 
+archives.push({
+  archiveIdx: tempIdx,
+  title: title,
+  url: url,
+  content: content,
+  thumbnail: thumbnail,
+});
+
+console.log(archives);
+
 //수정하기
-function editGroup(event) {
+function editArchive(event) {
   event.preventDefault();
   console.log("uu");
 
   var form = event.target;
   console.log(form);
 
+  var categoryIdx = $(event.target).find("input[name=category]").val();
   var title = $(event.target).find("input[name=title]").val();
-  var url = $(event.target).find("input[name=url]").val();
   var content = $(event.target).find("textarea[name=content]").val();
+  var url = $(event.target).find("input[name=url]").val();
   var thumbnail = $(event.target).find(".preview").attr("src");
   console.log(title);
 }
 
+// //일정 schedule
+// function addSchedule(event) {
+//   event.preventDefault();
+//   console.log("11111");
+
+//   var addform = event.target;
+//   console.log(addform);
+
+//   var categoryIdx = $(event.target).find("input[name=category]").val();
+//   var traveltitle = $(event.target).find("input[name=traveltitle]").val();
+//   var cost = $(event.target).find("input[name=cost]").val();
+//   console.log(categoryIdx + "," + traveltitle + "," + cost);
+// }
+
+
 //그룹 삭제
-function deleteGroup(event) {
+function deleteArchive(event) {
   // console.log(event.target.name);
   var cardidx;
   for (var i = 0; i < cardArray.length; i++) {
     if (cardArray[i].id == event.target.name) {
       title_del2 = cardArray[i].title;
       console.log(typeof title_del2);
-      groups.splice(i, 1);
+      archives.splice(i, 1);
       break;
     }
   }
@@ -269,87 +285,9 @@ function deleteGroup(event) {
 
 //수정 모달에 정보 띄우기
 $("#editArchiveModal").on("show.bs.modal", function (event) {
-  // //   var index = $(event.relatedTarget).data("index");
-  console.log("edit");
-  // //   // console.log(index);
-  // //   var cardData;
-  // //   for (var i = 0; i < cardArray.length; i++) {
-  // //     if (cardArray[i].id == index) {
-  // //       cardData = cardArray[i];
-  // //       break;
-  // //     }
-  // //   }
-  //   // console.log(cardData);
-  //   //썸네일
-  //   var modal = $(this);
-  //   if (newImage == undefined) {
-  //     //새로운 이미지 div 추가
-  //     newImage = document.createElement("img");
-  //     newImage.setAttribute("class", "preview");
-  //   }
-  //   newImage.src = cardData.thumbnail;
-  //   newImage.style.width = "264px";
-  //   newImage.style.height = "264px";
-  //   newImage.style.objectFit = "cover";
-  //   var container = modal.find("#imageContainer-edit");
-  //   container.append(newImage);
-  //   //팀 이름
-  //   modal.find("#InputTitle").val(cardData.title);
-  //   //날짜
-  //   modal.find("#date").daterangepicker(
-  //     {
-  //       locale: {
-  //         format: "YYYY-MM-DD",
-  //         separator: "~",
-  //         applyLabel: "확인",
-  //         cancelLabel: "취소",
-  //         fromLabel: "From",
-  //         toLabel: "To",
-  //         customRangeLabel: "Custom",
-  //         weekLabel: "W",
-  //         daysOfWeek: ["일", "월", "화", "수", "목", "금", "토"],
-  //         monthNames: [
-  //           "1월",
-  //           "2월",
-  //           "3월",
-  //           "4월",
-  //           "5월",
-  //           "6월",
-  //           "7월",
-  //           "8월",
-  //           "9월",
-  //           "10월",
-  //           "11월",
-  //           "12월",
-  //         ],
-  //         firstDay: 1,
-  //       },
-  //       startDate: cardData.start_date,
-  //       endDate: cardData.end_date,
-  //       drops: "down",
-  //     },
-  //     function (start, end, label) {
-  //       console.log(
-  //         "New date range selected: " +
-  //           start.format("YYYY-MM-DD") +
-  //           " to " +
-  //           end.format("YYYY-MM-DD") +
-  //           " (predefined range: " +
-  //           label +
-  //           ")"
-  //       );
-  //     }
-  //   );
-  //   console.log(index);
-  //   modal.find("#groupForm_edit").attr("name", index);
-  //   console.log("폼에 인덱스 저장" + modal.find("#groupForm_edit").attr("name"));
-});
-
-//삭제 모달에 정보띄우기
-$("#deleteArchiveModal").on("show.bs.modal", function (event) {
   var index = $(event.relatedTarget).data("index");
-  console.log(index);
-
+  console.log("edit");
+  // console.log(index);
   var cardData;
   for (var i = 0; i < cardArray.length; i++) {
     if (cardArray[i].id == index) {
@@ -357,33 +295,76 @@ $("#deleteArchiveModal").on("show.bs.modal", function (event) {
       break;
     }
   }
+  // console.log(cardData);
 
+  //썸네일
   var modal = $(this);
-  var comment =
-    cardData.title +
-    " 일정을 삭제하시겠습니까? <br> 삭제 후에는 동작을 되돌릴 수 없습니다.";
-  document.getElementById("comment_del").innerHTML = comment;
-  modal.find("#title_del").text(cardData.title + " 일정");
-  modal
-    .find("#date_del")
-    .text("여행 기간 : " + cardData.start_date + " ~ " + cardData.end_date);
+  if (newImage == undefined) {
+    //새로운 이미지 div 추가
+    newImage = document.createElement("img");
+    newImage.setAttribute("class", "preview");
+  }
+  newImage.src = cardData.thumbnail;
+  newImage.style.width = "264px";
+  newImage.style.height = "264px";
+  newImage.style.objectFit = "cover";
+  var container = modal.find("#imageContainer-edit");
+  container.append(newImage);
 
-  //버튼에 인덱스 저장
-  modal.find(".delete_group").attr("name", index);
+  //   /일정제목 이름
+  modal.find("#InputTitle").val(cardData.title);
+  modal.find("#inputUrl").val(cardData.url);
+  modal.find("#inputContent").val(cardData.content);
+  //   console.log(index);
+
+  modal.find("#archiveForm_edit").attr("title", index);
+  //   console.log("폼에 인덱스 저장" + modal.find("#archiveForm_edit").attr("title"));
 });
 
-//삭제모달2에 정보띄우기
-$("#deleteArchiveModal2").on("show.bs.modal", function (event) {
-  //모달 딜레이 때문에 비동기처리
-  setTimeout(function () {
-    var contents = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
-              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
-            </svg>
-            <div id="comment_del2">${`${title_del2}`} 팀이 <br> 삭제되었습니다</div>`;
+// //삭제 모달에 정보띄우기
+// $("#deleteArchiveModal").on("show.bs.modal", function (event) {
+//   var index = $(event.relatedTarget).data("index");
+//   console.log(index);
 
-    console.log(contents);
-    document.getElementById("contents_del2").innerHTML = contents;
-  }, 100);
+//   var cardData;
+//   for (var i = 0; i < cardArray.length; i++) {
+//     if (cardArray[i].id == index) {
+//       cardData = cardArray[i];
+//       break;
+//     }
+//   }
+
+//   var modal = $(this);
+//   var comment =
+//     cardData.title +
+//     " 일정을 삭제하시겠습니까? <br> 삭제 후에는 동작을 되돌릴 수 없습니다.";
+//   document.getElementById("comment_del").innerHTML = comment;
+//   modal.find("#title_del").text(cardData.title + " 일정");
+//   modal
+//     .find("#date_del")
+//     .text("여행 기간 : " + cardData.start_date + " ~ " + cardData.end_date);
+
+//   //버튼에 인덱스 저장
+//   modal.find(".delete_archive").attr("name", index);
+// });
+
+// //삭제모달2에 정보띄우기
+// $("#deleteArchiveModal2").on("show.bs.modal", function (event) {
+//   //모달 딜레이 때문에 비동기처리
+//   setTimeout(function () {
+//     var contents = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-lg" viewBox="0 0 16 16">
+//               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+//             </svg>
+//             <div id="comment_del2">${`${title_del2}`} 팀이 <br> 삭제되었습니다</div>`;
+
+//     console.log(contents);
+//     document.getElementById("contents_del2").innerHTML = contents;
+//   }, 100);
+// });
+
+//수정 모달에 정보 띄우기
+$("#addScheduleModal").on("show.bs.modal", function (event) {
+  console.log("asm");
 });
 
 //모달 정가운데
@@ -412,4 +393,5 @@ div.css(
     ($(window).width() - div.outerWidth()) / 2 + $(window).scrollLeft()
   ) + "px"
 );
-// $('#addArchiveModal').fadeIn(500);
+
+// $('#addTeamModal').fadeIn(500);

@@ -62,20 +62,27 @@ html, body {
 }
 
 .makeGroup_noTeam {
-    width: 314px;
-    height: 135px;
-    padding: 20px; 
-
     position: absolute;
-    top: 550px; 
+    top: 20px;
+    right: 15px;
 
-    background: #EAEAEA;
-    border-radius: 20px;
+    width: 30px;
+    height: 30px;
+
+    z-index: 3;
+
+    display: none;
+    cursor: pointer;
+    fill: #CDCDCD;
 }
 
 .makeGroup_noTeam:hover {
     background-color: #AFAFAF;;
     color: #FFFFFF;
+}
+
+.makeScheduleBtn {
+
 }
 
 
@@ -182,26 +189,11 @@ html, body {
     object-fit: cover;
 }
 
-.bi-pencil {
+.bi-pin-fill {
     position: absolute;
     top:20px;
     right: 15px;
 
-    width: 30px;
-    height: 30px;
-
-    z-index: 3;
-
-    display: none;
-    cursor: pointer;
-    fill: #CDCDCD;
-}
-
-.bi-trash {
-    position: absolute;
-    top:70px;
-    right: 15px;
-    
     width: 30px;
     height: 30px;
 
