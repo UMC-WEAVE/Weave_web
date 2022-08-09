@@ -1,22 +1,23 @@
 //el에 추가버튼을 생성하는 방식으로, 인포윈도우는 그냥 마우스 hover시 장소명만 뜨는 것으로 유지
-const $modal = document.querySelector('.modal-map');
-const $findAddress = document.querySelector('.findAddress');
-const $searchForm = document.querySelector('.searchForm');
-const $addressRslt = document.querySelector('.addressRslt');
-const $primaryBtn = document.querySelector('.btn-primary-map');
-const $result = document.querySelector('.result');
+const $modal_edit = document.querySelector('.modal-map-edit');
+const $findAddress_edit = document.querySelector('.findAddress_edit');
+const $searchForm_edit = document.querySelector('.searchForm_edit');
+const $addressRslt_edit = document.querySelector('.addressRslt_edit');
+const $primaryBtn_edit = document.querySelector('.btn-primary-map_edit');
+const $result_edit = document.querySelector('.result_edit');
 
 /* modal */
-$findAddress.addEventListener('click', () => {
-    console.log($findAddress);
-    showMapModal();
+$findAddress_edit.addEventListener('click', () => {
+    console.log("edit");
+    var param = "edit"
+    showMapModal(param);
 })
 
 /* 지도 api 부분 */
 // 마커를 담을 배열입니다
 var markers = [];
 
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+var mapContainer = document.getElementById('map_edit'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
         level: 3 // 지도의 확대 레벨
@@ -24,14 +25,14 @@ var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 
 var geocoder = new kakao.maps.services.Geocoder();
 
-$primaryBtn.addEventListener('click', () => {
-    geocoder.addressSearch($addressRslt.value, function(result, status) {
+$primaryBtn_edit.addEventListener('click', () => {
+    geocoder.addressSearch($addressRslt_edit.value, function(result, status) {
          if (status === kakao.maps.services.Status.OK) {
             $('.findAddress').attr('name', result[0].y + "," +result[0].x);
             console.log("ok");
 
-            $result.value = $addressRslt.value;
-            $addressRslt.value = "";
+            $result_edit.value = $addressRslt_edit.value;
+            $addressRslt_edit.value = "";
             
             $('.modal-map').modal('hide');
             console.log($('.findAddress').attr('name'));
@@ -39,10 +40,11 @@ $primaryBtn.addEventListener('click', () => {
     }); 
 })
 
-function showMapModal() {
+function showMapModal(param) {
 
     // 지도를 생성합니다    
     var map = new kakao.maps.Map(mapContainer, mapOption); 
+
     // 장소 검색 객체를 생성합니다
     var ps = new kakao.maps.services.Places();  
     
@@ -50,12 +52,12 @@ function showMapModal() {
     var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
     //모달 로딩까지의 시간 고려
-    $("#mapModal").on("shown.bs.modal", function() {
-        console.log("onAdd");
+    $("#mapModal_edit").on("shown.bs.modal", function() {
+        console.log("on");
         map.relayout();
     })
 
-    $searchForm.addEventListener('submit', submitInput);
+    $searchForm_edit.addEventListener('submit', submitInput);
 
     function submitInput(event) {
         event.preventDefault();
@@ -103,7 +105,7 @@ function showMapModal() {
                     document.getElementById('placesList').innerHTML = ""; 
                     document.getElementById('keyword').value = "";
 
-                    $addressRslt.value = event.target.name;
+                    $addressRslt_edit.value = event.target.name;
                     // $modal.style.display = 'none';
                 })
             }

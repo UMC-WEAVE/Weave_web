@@ -5,8 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Weave</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+    <link href="css/schedule.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/tmp_mapModal.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/semantic.min.css"> -->
+
+    <!-- <script
+    src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+    <script src="js/semantic.min.js"></script> -->
 </head>
 
 <body>
@@ -67,363 +77,448 @@
     <div class="container px-5 py-3" id="featured-3">
         <h3>
         </h3>
-        <h1 class="pb-2"><strong>여행 일정 점검</strong></h1>
-        <p>픽스된 일정을 여행일별로 확인하고 금액을 체크해보세요.</p>
+        <div class="pb-2">여행 일정 점검</div>
+        <p><div class="sub">픽스된 일정을 여행일별로 확인하고 금액을 체크해보세요.</div></p>
     </div>
 
     <!-- 1일차 -->
     <div class="container px-5 py-3" id="featured-3">
 
         <div class="col d-flex align-items-start">
-            <div
-                class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-1-square-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm7.283 4.002V12H7.971V5.338h-.065L6.072 6.656V5.385l1.899-1.383h1.312Z" />
-                </svg>
+            <div class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
             </div>
             <div>
-                <h3><strong>1일차</strong>
-                    <small class="h6">2022/04/06 (월)</small>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        일정관리
-                    </button>
-                </h3>
-
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">일정 관리</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <!-- form-->
-                                    <div class="col">
-                                        <!-- 제목 -->
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm">제목</label>
-                                            <div class="col-sm-10">
-                                                <input type="subtitle" class="form-control form-control-sm"
-                                                    id="colFormLabelSm" placeholder="최대 20자 입력 가능합니다.">
-                                            </div>
-                                        </div>
-                                        <!-- 날짜 -->
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm">날짜</label>
-                                            <div class="col-sm-6">
-                                                <input type="date" class="form-control form-control-sm"
-                                                    id="colFormLabelSm_s">
-                                                <input type="date" class="form-control form-control-sm"
-                                                    id="colFormLabelSm_e">
-                                            </div>
-                                        </div>
-                                        <!-- 시간 -->
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm">시간</label>
-                                            <div class="col-sm-10">
-                                                <input type="subtitle" class="form-control form-control-sm"
-                                                    id="colFormLabelSm">
-                                            </div>
-                                        </div>
-                                        <!-- 금액 -->
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm">비용</label>
-                                            <div class="col-sm-9">
-                                                <input type="subtitle" class="form-control form-control-sm"
-                                                    id="colFormLabelSm">
-                                            </div>
-                                            원
-                                        </div>
-                                        <!--주소입력-->
-                                        <div class="row mb-3">
-                                            <label for="colFormLabelSm"
-                                                class="col-sm-2 col-form-label col-form-label-sm">위치</label>
-                                            <div class="col-sm-10">
-                                                <button type="button" class="btn btn-secondary"
-                                                    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                    주소 입력
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary"
-                                    style="--bs-btn-padding-y: .35rem; --bs-btn-padding-x: .8rem; --bs-btn-font-size: .85rem;">
-                                    저장하기
-                                </button>
-                            </div>
-                        </div>
+                <div class="topContainer">
+                    <div class="dateContainer">
+                        <div class="day">1일차</div>
+                        <div class="date">2022/04/06 (월)</div>
                     </div>
+                    <div class="plusBtn">
+                        <svg data-bs-toggle="modal" data-bs-target="#addPlanModal" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#CDCDCD" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                        </svg>  
+                    </div> 
                 </div>
-                <!--카드 데이터 1-->
-                <div class="card text-bg-light mb-3" style="width: 650px;">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                            <small class="h5">12:00 ~ 1: 00</small>
-                        </h5>
-                        <p class="card-text">흑돼지 식당</p>
-                        <p class="h4">\ 85,000</p>
 
-                        <button type="button" value="success" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                              </svg>
-                        </button>
-                        <button type="button" value="remove" class="btn btn-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                              </svg>
-                        </button>
+                <!--카드 데이터 1-->
+                <div class="cardSection d-flex flex-row">
+                    <div class="card text-bg-light mb-3" style="width: 650px;">   
+                        <div class="card-body">
+                            <div class="cardInfoContainer row row-cols-2">
+                                <div class="card-title col-4">흑돼지 먹기</div>
+                                <div class="card-time col-8">12:00 ~ 1: 00</div>
+                                <div class="card-text col-12">흑돼지 식당</div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-cost">\ 85,000</div> 
+                    </div>
+                    <div class="btnContainer d-flex flex-column">
+                        <svg data-bs-toggle="modal" data-bs-target="#editPlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg>
+                        <svg data-bs-toggle="modal" data-bs-target="#deletePlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                        </svg>
                     </div>
                 </div>
                 <!--2-->
-                <div class="card text-bg-light mb-3" style="width: 650px;">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                            <small class="h5">12:00 ~ 1: 00</small>
-                        </h5>
-                        <p class="card-text">흑돼지 식당</p>
-                        <p class="h4">\ 85,000</p>
-
-                        <button type="button" value="success" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                              </svg>
-                        </button>
-                        <button type="button" value="remove" class="btn btn-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                              </svg>
-                        </button>
+                <div class="cardSection d-flex flex-row">
+                    <div class="card text-bg-light mb-3" style="width: 650px;">   
+                        <div class="card-body">
+                            <div class="cardInfoContainer row row-cols-2">
+                                <div class="card-title col-4">흑돼지 먹기</div>
+                                <div class="card-time col-8">12:00 ~ 1: 00</div>
+                                <div class="card-text col-12">흑돼지 식당</div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-cost">\ 85,000</div> 
+                    </div>
+                    <div class="btnContainer d-flex flex-column">
+                        <svg data-bs-toggle="modal" data-bs-target="#editPlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg>
+                        <svg data-bs-toggle="modal" data-bs-target="#deletePlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                        </svg>
                     </div>
                 </div>
-                <!--3-->
-                <div class="card text-bg-light mb-3" style="width: 650px;">
-                    <div class="card-body">
-                        <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                            <small class="h5">12:00 ~ 1: 00</small>
-                        </h5>
-                        <p class="card-text">흑돼지 식당</p>
-                        <p class="h4">\ 85,000</p>
-
-                        <button type="button" value="success" class="btn btn-primary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                              </svg>
-                        </button>
-                        <button type="button" value="remove" class="btn btn-secondary"
-                            style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                              </svg>
-                        </button>
+                <!-- 3 -->
+                <div class="cardSection d-flex flex-row">
+                    <div class="card text-bg-light mb-3" style="width: 650px;">   
+                        <div class="card-body">
+                            <div class="cardInfoContainer row row-cols-2">
+                                <div class="card-title col-4">흑돼지 먹기</div>
+                                <div class="card-time col-8">12:00 ~ 1: 00</div>
+                                <div class="card-text col-12">흑돼지 식당</div>
+                            </div>
+                            
+                        </div>
+                        <div class="card-cost">\ 85,000</div> 
+                    </div>
+                    <div class="btnContainer d-flex flex-column">
+                        <svg data-bs-toggle="modal" data-bs-target="#editPlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-pencil" viewBox="0 0 16 16">
+                            <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                        </svg>
+                        <svg data-bs-toggle="modal" data-bs-target="#deletePlanModal" xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="#CDCDCD" class="bi bi-trash" viewBox="0 0 16 16">
+                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                        </svg>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-        <!-- 2일차 -->
-        <div class="container px-5 py-3" id="featured-3">
-
-            <div class="col d-flex align-items-start">
-                <div
-                    class="icon-square text-bg-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-2-square-fill" viewBox="0 0 16 16">
-                        <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2Zm4.646 6.24v.07H5.375v-.064c0-1.213.879-2.402 2.637-2.402 1.582 0 2.613.949 2.613 2.215 0 1.002-.6 1.667-1.287 2.43l-.096.107-1.974 2.22v.077h3.498V12H5.422v-.832l2.97-3.293c.434-.475.903-1.008.903-1.705 0-.744-.557-1.236-1.313-1.236-.843 0-1.336.615-1.336 1.306Z"/>
-                      </svg>
+    <!-- addModal -->
+    <div class="modal fade" id="addPlanModal" tabindex="-1" aria-labelledby="addPlanModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- <div class="modal-header"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#addPlanModal" aria-label="Close"></button>
+            <!-- </div> -->
+            <form class="addForm">
+            <div class="modal-body">
+                <div class="modal-title" id="addPlanModalLabel">일정 관리</div>
+                    <div class="formInput">
+                        <div class="addTitleSection">
+                            <label for="title-add">제목</label>
+                            <input type="text" id="title-add" required>
+                        </div>
+                        <div class="addDateSection">
+                            <label for="date-add">날짜</label>
+                            <input type="date" id="date-add" required>
+                        </div>
+                        <div class="addTimeSection">
+                            <label for="time-add">시간</label>
+                            <!-- <input type="text" id="time-add" required> -->
+                            <select class="form-select form-select-sm">
+                                <option value="0" selected>00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>시&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0" selected>00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>분
+                            ~&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0" selected>00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>시&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0" selected>00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>분&nbsp;
+                        </div>
+                        <div class="addCostSection">
+                            <label for="cost-add">비용</label>
+                            <input type="text" id="cost-add" required> 원
+                        </div>
+                        <div class="addLocationSection">
+                            <label for="cost-add">주소</label>
+                            <input type="text" value="" class="result" readonly required>
+                            <input type="button" name="dddd" value="주소찾기" class="findAddress" data-bs-toggle="modal" data-bs-target="#mapModal">
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3><strong>2일차</strong>
-                        <small class="h6">2022/04/07 (화)</small>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                            일정관리
-                        </button>
-                    </h3>
-    
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">일정 관리</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form>
-                                        <!-- form-->
-                                        <div class="col">
-                                            <!-- 제목 -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabelSm"
-                                                    class="col-sm-2 col-form-label col-form-label-sm">제목</label>
-                                                <div class="col-sm-10">
-                                                    <input type="subtitle" class="form-control form-control-sm"
-                                                        id="colFormLabelSm" placeholder="최대 20자 입력 가능합니다.">
-                                                </div>
-                                            </div>
-                                            <!-- 날짜 -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabelSm"
-                                                    class="col-sm-2 col-form-label col-form-label-sm">날짜</label>
-                                                <div class="col-sm-6">
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="colFormLabelSm_s">
-                                                    <input type="date" class="form-control form-control-sm"
-                                                        id="colFormLabelSm_e">
-                                                </div>
-                                            </div>
-                                            <!-- 시간 -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabelSm"
-                                                    class="col-sm-2 col-form-label col-form-label-sm">시간</label>
-                                                <div class="col-sm-10">
-                                                    <input type="subtitle" class="form-control form-control-sm"
-                                                        id="colFormLabelSm">
-                                                </div>
-                                            </div>
-                                            <!-- 금액 -->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabelSm"
-                                                    class="col-sm-2 col-form-label col-form-label-sm">비용</label>
-                                                <div class="col-sm-9">
-                                                    <input type="subtitle" class="form-control form-control-sm"
-                                                        id="colFormLabelSm">
-                                                </div>
-                                                원
-                                            </div>
-                                            <!--주소입력-->
-                                            <div class="row mb-3">
-                                                <label for="colFormLabelSm"
-                                                    class="col-sm-2 col-form-label col-form-label-sm">위치</label>
-                                                <div class="col-sm-10">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                                        주소 입력
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary"
-                                        style="--bs-btn-padding-y: .35rem; --bs-btn-padding-x: .8rem; --bs-btn-font-size: .85rem;">
-                                        저장하기
-                                    </button>
-                                </div>
-                            </div>
+                <div class="modal-footer-custom">
+                    <input type="submit" class="btn btn-secondary" value="저장하기">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- editModal -->
+    <div class="modal fade" id="editPlanModal" tabindex="-1" aria-labelledby="editPlanModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- <div class="modal-header"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- </div> -->
+            <form class="editForm">
+            <div class="modal-body">
+                <div class="modal-title" id="editPlanModalLabel">일정 관리</div>
+                    <div class="formInput">
+                        <div class="editTitleSection">
+                            <label for="title-edit">제목</label>
+                            <input type="text" id="title-edit" required>
+                        </div>
+                        <div class="editDateSection">
+                            <label for="date-edit">날짜</label>
+                            <input type="date" id="date-edit" required>
+                        </div>
+                        <div class="editTimeSection">
+                            <label for="time-edit">시간</label>
+                            <select class="form-select form-select-sm">
+                                <option value="0">00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>시&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>분&nbsp;
+                            ~&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0">00</option>
+                                <option value="1">01</option>
+                                <option value="2">02</option>
+                                <option value="3">03</option>
+                                <option value="4">04</option>
+                                <option value="5">05</option>
+                                <option value="6">06</option>
+                                <option value="7">07</option>
+                                <option value="8">08</option>
+                                <option value="9">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                                <option value="15">15</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                                <option value="19">19</option>
+                                <option value="20">20</option>
+                                <option value="21">21</option>
+                                <option value="22">22</option>
+                                <option value="23">23</option>
+                            </select>시&nbsp;
+                            <select class="form-select form-select-sm">
+                                <option value="0">00</option>
+                                <option value="15">15</option>
+                                <option value="30">30</option>
+                                <option value="45">45</option>
+                            </select>분&nbsp;
+                        </div>
+                        <div class="editCostSection">
+                            <label for="cost-edit">비용</label>
+                            <input type="text" id="cost-edit" required> 원
+                        </div>
+                        <div class="editLocationSection">
+                            <label for="cost-edit">주소</label>
+                            <input type="text" value="" class="result" readonly required>
+                            <input type="button" name="dddd" value="주소찾기" class="findAddress" data-bs-toggle="modal" data-bs-target="#mapModal">
                         </div>
                     </div>
-                    <!--카드 데이터 1-->
-                    <div class="card text-bg-light mb-3" style="width: 650px;">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                                <small class="h5">12:00 ~ 1: 00</small>
-                            </h5>
-                            <p class="card-text">흑돼지 식당</p>
-                            <p class="h4">\ 85,000</p>
-    
-                            <button type="button" value="success" class="btn btn-primary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                  </svg>
-                            </button>
-                            <button type="button" value="remove" class="btn btn-secondary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                  </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <!--2-->
-                    <div class="card text-bg-light mb-3" style="width: 650px;">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                                <small class="h5">12:00 ~ 1: 00</small>
-                            </h5>
-                            <p class="card-text">흑돼지 식당</p>
-                            <p class="h4">\ 85,000</p>
-    
-                            <button type="button" value="success" class="btn btn-primary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                  </svg>
-                            </button>
-                            <button type="button" value="remove" class="btn btn-secondary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                  </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <!--3-->
-                    <div class="card text-bg-light mb-3" style="width: 650px;">
-                        <div class="card-body">
-                            <h5 class="card-title"><strong>흑돼지 먹기</strong>
-                                <small class="h5">12:00 ~ 1: 00</small>
-                            </h5>
-                            <p class="card-text">흑돼지 식당</p>
-                            <p class="h4">\ 85,000</p>
-    
-                            <button type="button" value="success" class="btn btn-primary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                                  </svg>
-                            </button>
-                            <button type="button" value="remove" class="btn btn-secondary"
-                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                  </svg>
-                            </button>
-                        </div>
+                </div>
+                <div class="modal-footer-custom">
+                    <input type="submit" class="btn btn-secondary" value="저장하기">
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    <!-- deleteModal -->
+    <div class="modal fade" id="deletePlanModal" tabindex="-1" aria-labelledby="deletePlanModalLabel"
+    aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- </div> -->
+                <div class="modal-body">
+                    <div class="modal-title" id="deletePlanModalLabel">일정 삭제</div>
+                    <div class="deleteComment">{일정 이름}을 삭제하시겠습니까?<br>삭제 후에는 동작을 되돌릴 수 없습니다.</div>
+                    <ul class="deleteTeamInfo">
+                        <li>팀 정보들이</li>
+                        <li>들어갈</li>
+                        <li>부분입니다</li>
+                    </ul>
+                </div>
+                <div class="modal-footer-custom">
+                    <input type="button" class="btn btn-secondary" value="삭제하기" data-bs-toggle="modal" data-bs-target="#deletePlanModal2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- deleteModal2 -->
+    <div class="modal fade" id="deletePlanModal2" tabindex="-1" aria-labelledby="deletePlanModal2Label"
+    aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- <div class="modal-header"> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <!-- </div> -->
+                <div class="modal-body">
+                    <div class="content_delete2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#448AFF" class="bi bi-check-lg" viewBox="0 0 16 16">
+                            <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z"/>
+                        </svg>
+                        <div class="deleteComment2">{여행일정이름}이<br>일정에서 삭제되었어요</div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <!-- map-add -->
+    <div class="modal modal-center fade modal-map" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-centered-map modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header modal-hearder-map">
+              <button type="button" class="btn-close btn-close-map" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-body-map">
+              <div class="modal-title modal-title-map">주소입력</div>
+              <div class="modal-location modal-location-map">
+                위치
+                <input type="text" class="addressRslt" readonly>
+              </div>
+              <div class="explanation">키워드로 장소를 검색하면 검색 결과를 목록과 마커로 표시합니다.</div>
+              <div class="map_wrap">
+                <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+
+                <div id="menu_wrap" class="bg_white">
+                  <div class="option">
+                      <div>
+                          <form class="searchForm">
+                              키워드 : <input type="text" value="" id="keyword" size="15"> 
+                              <button type="submit">검색하기</button> 
+                          </form>
+                      </div>
+                  </div>
+                  <hr>
+                  <ul id="placesList"></ul>
+                  <div id="pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-primary-map" data-bs-toggle="modal" href="#addPlanModal">확인</button>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="modal modal-center fade modal-map-edit" id="mapModal_edit" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-centered-map modal-fullscreen">
+          <div class="modal-content">
+            <div class="modal-header modal-hearder-map">
+              <button type="button" class="btn-close btn-close-map" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-body-map">
+              <div class="modal-title modal-title-map">주소입력</div>
+              <div class="modal-location modal-location-map">
+                위치
+                <input type="text" class="addressRslt_edit" readonly>
+              </div>
+              <div class="explanation">키워드로 장소를 검색하면 검색 결과를 목록과 마커로 표시합니다.</div>
+              <div class="map_wrap">
+                <div id="map_edit" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
+
+                <div id="menu_wrap" class="bg_white">
+                  <div class="option">
+                      <div>
+                          <form class="searchForm_edit">
+                              키워드 : <input type="text" value="" id="keyword" size="15"> 
+                              <button type="submit">검색하기</button> 
+                          </form>
+                      </div>
+                  </div>
+                  <hr>
+                  <ul id="placesList"></ul>
+                  <div id="pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary btn-primary-map" data-bs-toggle="modal" href="#addPlanModal">확인</button>
+            </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- kakao -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ccaf9cd422b6cbe03f3ba3775e12f987&libraries=services"></script>
+
+    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
         crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- js -->
+    <script src="js/tmp_mapModal.js"></script>
+    <!-- <script src="js/mapModal_edit.js"></script> -->
 </body>
 
 </html>

@@ -1,0 +1,282 @@
+.pb-2 {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+}
+
+.sub {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.25px;
+    line-height: 140%;
+}
+
+.topContainer {
+    display: flex;
+    flex-direction: column;
+
+    width: 650px;
+    /* justify-content: space-between;
+    align-items: center; */
+}
+
+.dateContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.day {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140%;
+}
+
+.date {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+
+    margin-left: 24px;
+}
+
+.plusBtn {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 10px;
+    /* margin-right: 50px; */
+}
+
+.bi-plus-circle, .bi-pencil, .bi-trash {
+    cursor: pointer;
+}
+
+.card {
+    background: #F3F3F3;
+    border: 1px solid #CDCCDC;
+    border-radius: 15px;
+}
+
+.card-body {
+    width: 560px;
+    height: 110px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;    
+}
+
+.card-title {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+.card-time {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+}
+
+.card-text {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+}
+
+.card-cost {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+
+    position:absolute;
+    bottom: 18px;
+    right: 46px;
+}
+
+.card-title, .card-time {
+    padding-bottom: 10px;
+}
+
+.btnContainer {
+    margin-left: 28px;
+}
+
+.btnContainer svg {
+    margin-bottom: 21px;
+}
+
+/* modal */
+.modal {
+    --bs-modal-width: 568px !important;
+}
+
+.btn-close {
+    position: absolute;
+    top: 31px;
+    right: 40px;
+    cursor: pointer;
+}
+
+.modal-title {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 140%;
+
+    padding-bottom: 40px;
+}
+
+.modal-body {
+    margin-left: 76px;
+    margin-top: 58px;
+}
+
+.formInput {
+    display: grid;
+    gap: 35px;
+
+    margin-bottom: 108px;
+}
+
+.addTitleSection label,
+.addDateSection label,
+.addTimeSection label,
+.addCostSection label,
+.addLocationSection label,
+.editTitleSection label,
+.editDateSection label,
+.editTimeSection label,
+.editCostSection label,
+.editLocationSection label {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.2487px;
+    line-height: 140%;
+
+    margin-right: 56px;
+}
+
+#title-add {
+    width: 289px;
+}
+
+#date-add {
+    width: 120px;
+}
+
+#time-add {
+    width: 85px;
+}
+
+.form-select-sm {
+    width: 62px !important;
+}
+
+.addTimeSection, .editTimeSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-select-sm::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background: rgba(196, 196, 196, 0.13);
+    border-radius: 23px;
+}
+
+.form-select-sm::-webkit-scrollbar-thumb {
+    background: #C4C4C4;
+    border-radius: 36px;
+}
+
+#cost-add {
+    width: 243px;
+}
+
+.modal-footer-custom {
+    justify-content: center !important;
+}
+
+.btn-secondary {
+    width: 123px;
+    height: 39px;
+
+    margin-bottom: 32px;
+}
+
+.deleteComment {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140%;
+    
+    margin-bottom: 61px;
+}
+
+.deleteTeamInfo {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17.2487px;
+    line-height: 240%;
+
+    margin-bottom: 139px;
+}
+
+#deletePlanModal2  .modal-body{
+    margin-left: 0px;
+    margin-top: 138px;
+    margin-bottom: 160px;
+}
+
+.bi-check-lg {
+    width: 161px;
+    height: 161px;
+}
+
+.content_delete2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteComment2 {
+    text-align: center;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 60px;
+}
+
+/* .deleteTeamInfo li {
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    
+    line-height: 140%;
+} */
+/* #location-add {
+    width: 85px;
+} */

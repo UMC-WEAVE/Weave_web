@@ -17,7 +17,7 @@ var requestOptions = {
   redirect: 'follow'
 };
 
-fetch("http://wave-weave.shop/teams/1/create", requestOptions)
+fetch("wave-weave.shop/teams/1/create", requestOptions)
   .then(response => response.text())
   .then(result => console.log(result))
   .catch(error => console.log('error', error));

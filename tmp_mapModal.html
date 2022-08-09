@@ -10,21 +10,21 @@
     <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/tmp_mapModal.css">
-    <link rel="stylesheet" href="css/bootstrap_mapModal.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
     <input type="text" value="" class="result" readonly>
     <input type="button" name="dddd" value="주소찾기" class="findAddress" data-bs-toggle="modal" data-bs-target="#mapModal">
 
     <div class="modal modal-center fade" id="mapModal" tabindex="-1" aria-labelledby="mapModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-centered-map modal-fullscreen">
           <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-header modal-hearder-map">
+              <button type="button" class="btn-close btn-close-map" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <div class="modal-title">주소입력</div>
-              <div class="modal-location">
+            <div class="modal-body modal-body-map">
+              <div class="modal-title modal-title-map">주소입력</div>
+              <div class="modal-location modal-location-map">
                 위치
                 <input type="text" class="addressRslt" readonly>
               </div>
@@ -51,6 +51,7 @@
               <button type="button" class="btn btn-primary">확인</button>
             </div>
         </div>
+      </div>
     </div>
 
     <!-- bootstrap -->

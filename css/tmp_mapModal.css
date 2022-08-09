@@ -21,7 +21,7 @@
 } */
 
 /* 모달 정가운데 */
-.modal {
+/* .modal {
     text-align: center;
 }
 
@@ -38,17 +38,17 @@
     display: inline-block;
     text-align: left;
     vertical-align: middle;
-}
+} */
 /* 여기까지 */
 
-.modal-dialog.modal-dialog-centered {
+.modal-dialog .modal-dialog-centered-map {
     display: inline-block;
     text-align: left;
     width: 80%;
     height: 80%;
 }
 
-.modal-header {
+.modal-header-map {
     display: flex;
     flex-shrink: 0;
     align-items: center;
@@ -58,12 +58,12 @@
     border-top-right-radius: var(--bs-modal-inner-border-radius);
 }
 
-.btn-close{
+.btn-close-map{
     padding: calc(var(--bs-modal-header-padding-y) * .5) calc(var(--bs-modal-header-padding-x) * .5);
     margin: calc(var(--bs-modal-header-padding-y) * -.5) calc(var(--bs-modal-header-padding-x) * -.5) calc(var(--bs-modal-header-padding-y) * -.5) auto;
 }
 
-.modal-body {
+.modal-body-map {
     margin-left: 100px;
     margin-right: 100px;
 
@@ -71,7 +71,7 @@
     overflow-x: hidden;
 }
 
-.modal-title {
+.modal-title-map {
     font-family: 'Pretendard';
     font-style: normal;
     font-weight: 700;
@@ -81,7 +81,7 @@
     margin-bottom: 20px;
 }
 
-.modal-location {
+.modal-location-map {
     margin-bottom: 20px;
 
     font-family: 'Pretendard';
