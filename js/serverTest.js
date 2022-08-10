@@ -64,7 +64,7 @@ okBtn.addEventListener('click', () => {
       redirect: 'follow'
     };
 
-    fetch("http://wave-weave.shop/plans", requestOptions)
+    fetch("wave-weave.shop/plans", requestOptions)
       .then(response => response.text())
       .then(result => console.log(result))
       .catch(error => console.log('error', error));

@@ -1,15 +1,24 @@
 //el에 추가버튼을 생성하는 방식으로, 인포윈도우는 그냥 마우스 hover시 장소명만 뜨는 것으로 유지
 const $modal = document.querySelector('.modal-map');
-const $findAddress = document.querySelector('.findAddress');
+const $findAddress_add = document.querySelector('.findAddress_add');
+const $findAddress_edit = document.querySelector('.findAddress_edit');
 const $searchForm = document.querySelector('.searchForm');
 const $addressRslt = document.querySelector('.addressRslt');
 const $primaryBtn = document.querySelector('.btn-primary-map');
-const $result = document.querySelector('.result');
+const $result_add = document.querySelector('.result_add');
+const $result_edit = document.querySelector('.result_edit');
 
 /* modal */
-$findAddress.addEventListener('click', () => {
-    console.log($findAddress);
-    showMapModal();
+$findAddress_add.addEventListener('click', () => {
+    console.log("add" + $findAddress_add);
+    var param = "add";
+    showMapModal(param);
+})
+
+$findAddress_edit.addEventListener('click', () => {
+    console.log("edit" + $findAddress_edit);
+    var param = "edit"
+    showMapModal(param);
 })
 
 /* 지도 api 부분 */
@@ -27,19 +36,35 @@ var geocoder = new kakao.maps.services.Geocoder();
 $primaryBtn.addEventListener('click', () => {
     geocoder.addressSearch($addressRslt.value, function(result, status) {
          if (status === kakao.maps.services.Status.OK) {
-            $('.findAddress').attr('name', result[0].y + "," +result[0].x);
-            console.log("ok");
+            modalParam = $('.btn-primary-map').attr("name");
+            if (modalParam == "add") {
+                $('.findAddress_add').attr('name', result[0].y + "," +result[0].x);
+                console.log("ok");
 
-            $result.value = $addressRslt.value;
-            $addressRslt.value = "";
-            
-            $('.modal-map').modal('hide');
-            console.log($('.findAddress').attr('name'));
+                $result_add.value = $addressRslt.value;
+                $addressRslt.value = "";
+                
+                $(this).data('modal', null);
+                $('.modal-map').modal('hide');
+                $('#addPlanModal').modal('show');
+                console.log($('.findAddress_add').attr('name'));
+            } else {
+                $('.findAddress_edit').attr('name', result[0].y + "," +result[0].x);
+                console.log("ok");
+
+                $result_edit.value = $addressRslt.value;
+                $addressRslt.value = "";
+                
+                $(this).data('modal', null);
+                $('.modal-map').modal('hide');
+                $('#editPlanModal').modal('show');
+                console.log($('.findAddress_edit').attr('name'));
+            }
         } 
     }); 
 })
 
-function showMapModal() {
+function showMapModal(param) {
 
     // 지도를 생성합니다    
     var map = new kakao.maps.Map(mapContainer, mapOption); 
@@ -51,9 +76,12 @@ function showMapModal() {
 
     //모달 로딩까지의 시간 고려
     $("#mapModal").on("shown.bs.modal", function() {
-        console.log("onAdd");
+        console.log("on");
         map.relayout();
     })
+
+    //add, edit 판별
+    $(".btn-primary-map").attr("name", param);
 
     $searchForm.addEventListener('submit', submitInput);
 

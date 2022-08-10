@@ -11,11 +11,10 @@ function kakaoLogin() {
     var requestOptions = {
         method: 'GET',
         redirect: 'follow'
-    };
-    
-    
-    fetch("www.wave-weave.shop/login/kakao", requestOptions)
+      };
+      
+      fetch("www.wave-weave.shop/login/kakao", requestOptions)
         .then(response => response.text())
-        .then(result => logincode = result)
+        .then(result => console.log(result))
         .catch(error => console.log('error', error));
 }
